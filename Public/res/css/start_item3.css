@@ -1,0 +1,85 @@
+.body_left{
+	padding-left: 100px;
+	margin-top: 20px;
+	float: left;
+	width: 75%;
+	background-color: #ffffff;
+	margin-bottom: 100px;
+	padding-bottom: 100px;
+	
+}
+.body_right{
+	margin-top: 20px;
+	float: right;
+	width: 23%;
+	background-color: #ffffff;
+	height: 300px;
+
+}
+.info-body4{
+	margin-left: 8px;
+	margin-top: 25px;
+}
+.radio_pos{
+	margin-left: 5px;
+}
+.form_pos{
+	margin-left: -30px;
+}
+.body_left2{
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 20px;
+	margin-top: 20px;
+	float: left;
+	width: 75%;
+	background-color: #ffffff;
+	margin-bottom: 50px;
+	padding-bottom: 100px;
+	
+}
+.tool_bar2 {
+	margin-top: 10px;
+    border-top: 1px solid #e7e7eb;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.tr_color{
+	background-color: #F8F8F8;
+}
+
+.red{
+	text-indent: 10px;
+    font-size: 16px;
+    line-height: 30px;
+    color: #ed5e58;
+}
+.finish{
+	margin-top: 20px;
+	width: 100%;
+	background-color: #ffffff;
+}
+.operating-tips {
+    width: 400px;
+    margin: 0px auto;
+    padding: 80px 0px;
+}
+.operating-tips h3 {
+    font-size: 18px;
+    line-height: 30px;
+    margin-left: 70px;
+    padding-top: 5px;
+}	
+.operating-tips p {
+    font-size: 12px;
+    margin-left: 70px;
+}
+.icon-success {
+    background: url('../images/startitem/icon-success.png') no-repeat 50% 50%;
+    width: 60px;
+	height: 60px;
+	display: block;
+	float: left;
+	margin-top: 20px;
+}

@@ -1,0 +1,91 @@
+body {
+background-color: #f3f3f3;
+font-family: 'Microsoft Yahei','\5FAE\8F6F\96C5\9ED1',Arial,'Hiragino Sans GB','\5B8B\4F53';
+}
+.me{
+	font-size: 15px;
+	color: red;
+}
+.my_{
+	padding-left:170px;
+	padding-top:30px;
+}
+#backtotop{
+	color: #000;
+	display: none;
+	position: fixed;
+	right: 50px;
+	bottom: 20px;
+	height: 120px;
+	width: 70px;
+	z-index: 100;
+	background:url('../images/small_pic/backtotop.png'); 
+	    /*使用CSS3中的transition属性给跳转链接中的文字添加渐变效果*/  
+    -moz-transition:color 1s;  
+    -webkit-transition:color 1s;  
+    -o-transition:color 1s;  
+}
+#hid li{
+list-style-type:none;
+font-size: 12x;
+padding: 6px 22px;
+margin: 0px;
+}
+.caret{
+	margin-right: 38px;
+
+}
+#hid{
+	color: #fff;
+	position: absolute;
+/*
+	连成一个整体
+	position: absolute;
+	*/
+	z-index: 102;
+	display: none;
+	background-color: #444444;
+}
+#topbar{
+	padding: 15px 0px;
+	padding-bottom: 0px;
+	max-height:120px; 
+}
+#bar1 a{
+	padding: 0 5px;
+	color: #a5a5a5;
+	font-family: Arial, "\5B8B\4F53";
+	font-size: 13px;
+}
+.active_{
+	background-color: #fff;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+	
+}
+#bar1{
+margin-bottom: 30px;
+background-color: #f9f9f9;
+height: 30px;
+width: 100%;
+position: absolute;
+float: right;
+text-align: right;
+padding: 5px 30px;
+z-index: 101;
+}
+.nav li{
+padding-top: 25px;
+font-size: 16px;
+}
+.nav li a {
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+	
+}
+.navbar{
+background-color: #fff;
+border: 0px;
+margin: 0px;
+padding: 0px;
+}

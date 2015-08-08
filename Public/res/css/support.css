@@ -1,0 +1,126 @@
+.next_support:hover {
+color: #fff;
+}
+.next_support{
+	border: 0px;
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+	width: 100px;
+	line-height: 30px;
+	height: 35px;
+	width: 90px;
+	background-color: #a7ce37;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-bor-border-radius: 5px;
+	cursor: pointer;
+	margin: 0px auto;
+	position: relative;
+	display: block;
+}
+.risk_content{
+	text-indent: 2em;
+}
+.risk_title{
+font-weight: bold;
+color: #666;
+font-size: 12px;
+}
+.risk_expalin{
+
+	width: nherit;
+	height: 100px;
+	border: 1px solid #a7ce37;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-bor-border-radius: 5px;
+}
+select{
+	z-index: 10000;
+}
+.judge_edit{
+	display: none;
+}
+.sav_address{
+	border: 0px;
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+	width: 100px;
+	line-height: 30px;
+	height: 30px;
+	width: 130px;
+	background-color: #a7ce37;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-bor-border-radius: 5px;
+	cursor: pointer;
+}
+
+
+.edit_address table td{
+	font-size: 12px;
+	text-align: left;
+	padding: 5px 0px;
+	width: 100px;
+}
+.edit_address table{
+margin-top: 20px;
+}
+.edit_address{
+	border-top: 1px solid #e3e3e3;
+	margin-top: 10px;
+	display: none;
+
+}
+.address_alert{
+	display: none;
+}
+.phone_alert{
+	color: red;
+}
+.addresss{
+	display: block;
+	
+}
+._address{
+	border-top: 1px dashed #e3e3e3;
+	padding-top: 10px;
+}
+.support{
+	height:800px;
+	background-color: #f3f3f3;
+	width: 1000px;
+	margin: 20px auto; 
+	border: 1px solid #dedbdb;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-family: 'Microsoft Yahei','\5FAE\8F6F\96C5\9ED1',Arial,'Hiragino Sans GB','\5B8B\4F53';
+    color: #666;
+}
+.support_title{
+	height: 70px;
+	font-size: 24px;
+	color: #444;
+	border-bottom: 1px solid #dedbdb;
+	background-color: #fafafa;
+}
+.support_content{
+	font-size: 14px;
+	padding: 20px 40px;
+	height: 730px;
+	background-color: #fff;
+}
+.support_content div{
+	margin: 20px 10px;
+}
+.support_weight{
+
+color: 333;
+font-weight: bold;
+}
+.support_red{
+	color: #f35d5d;
+}

@@ -1,0 +1,123 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+     <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/personalPagebase.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/myPage.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/newsCenter.css">	
+    <link rel="stylesheet" href="__PUBLIC__/res/css/support.css"/>
+
+	<title>个人中心-收货地址管理</title>
+</head>
+<body>
+	<!-- 头部 -->
+<include file="Publicmodel:head" />
+	<!-- 主内容去区-->
+	<div class="main clearfix">
+		<div class="setting wrap">
+			<div class="setting-title clearfix">
+			<h3>个人中心</h3>
+			</div>
+			<div class="setting-content clearfix">
+				<div class="setting-menu">
+					<ul class="clearfix">
+						<li><a class="icons msg ie6fixpic" href="{:U('/my','','')}">信息修改</a></li>
+						<li ><a class="icons rec-com ie6fixpic" href="{:U('/password','','')}">密码修改</a></li>
+						<li><a class="icons rec-com ie6fixpic" href="{:U('/friend','','')}">好友管理</a></li>
+						<li class="select" ><a class="icons rec-com ie6fixpic" href="{:U('/address','','')}">收货地址管理</a></li>
+						<li><a class="icons rec-com ie6fixpic" href="{:U('/trade','','')}">我的交易信息</a></li>
+					</ul>
+				</div>
+
+				<div class="setting-detail" >
+				<!--setting address static-->
+				<div class="setting-address">
+					<h3 class="green">收货地址管理</h3>
+					<p>可添加管理多个收件地址，以便收取回报时使用</p>
+					
+					<div class="_address" style="padding-left: 20px;padding-top: 20px;">
+          <span class="support_weight" >收货人：</span>
+          <span style="color:#4BA733;font-weight:bold;cursor:pointer"	onclick="show_edit(2)">使用新地址</span>
+          <div class="total_address">
+
+          	<foreach item="v" name="dm_address.dm_address">
+           <span class="addresss" > <input type="radio" name="address" checked value="{$v.id}" />
+            <span>
+           <span class="address_name">{$v.name}</span>
+           <span class="address_phone">{$v.phone_number}</span>
+           <span class="phone_alert">(手机号码用来接收回报信息，请确认无误!)</span>
+           <span class="address_province">{$v.province}</span>
+           <span class="address_town">{$v.town}</span>
+           <span class="address_district">{$v.district}</span>
+           <span class="detail_address">{$v.detail_address}</span>
+           <span class="postcode">{$v.postcode}</span>
+           <input type="hidden" class="address_id" value="{$v.id}" />
+           <p style="font-size:12px;"> 
+             <a href="javascript:;" style="color:#4BA733" class="judge_edit"  onclick="show_edit(1)">编辑</a>
+             <a href="javascript:;" style="margin-left:10px;color:#4BA733" class="judge_edit"  onclick="show_edit(2)">添加</a>
+             <a href="javascript:;" style="margin-left:10px;color:#4BA733" class="judge_edit"  onclick="dele_address()">删除</a>
+           </p>
+            </span>
+   
+          </span>
+          </foreach>
+          </div>
+         
+         
+          <div class="edit_address">
+              <table >
+                <tr>
+                  <td><span class="support_red">*</span>收货人</td>
+                  <td><input type="text" style="width:100px;" id="address_name"/></td>
+                  <td><span class="address_alert"></span></td>
+                </tr>
+                <tr>
+                  <td><span class="support_red">*</span>地区</td>
+                  <td > <select id="sel_Province" style="min-width:135px;padding:0xp;margin:0px;" name="sel_Province" >
+					</select>
+				</td>
+                  <td><select id="sel_City" name="sel_City" style="min-width:135px;">
+				</select></td>
+                  <td><select id="sel_County" name="sel_County" style="min-width:135px;">
+				</select></td>
+                </tr>
+                <tr>
+                  <td><span class="support_red">*</span>详细街道地址</td>
+                  <td><input type="text" id="detail_address" /></td>
+                </tr>
+                <tr>
+                  <td><span class="support_red">*</span>手机号码</td>
+                  <td><input type="text" style="width:100px;"  id="address_phone" /></td>
+                </tr>
+                <tr>
+                  <td><span class="support_red">*</span>邮政编码</td>
+                  <td><input type="text" style="width:100px;"  id="postcode" /></td>
+                </tr>
+
+              </table>
+                <button class="sav_address"style="padding:0px;background-color: #4BA733;" >保存收货人地址</button>
+
+            </div>
+
+        </div>
+				</div>
+				<!--setting address end-->
+			</div>
+			
+
+			</div>
+		</div>
+	</div>
+	<!-- 尾部 -->
+<include file="Publicmodel:person_footer" />
+	
+</body>
+		<script language="javascript" type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+		<script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/Region.js"></script>
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/support.js"></script>
+        <script type="text/javascript">
+            var sav_address='{:U("index/support/sav_address",'','')}';
+            var del_address='{:U("index/support/del_address",'','')}';
+        </script>
+</html>

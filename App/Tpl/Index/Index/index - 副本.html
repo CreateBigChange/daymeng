@@ -1,0 +1,260 @@
+ <!DOCTTYPE html>
+<html>
+	<head>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="description" content="京东金融综合互联网理财服务，基金理财,金融服务，敬请享受! "/>
+    <meta name="Keywords" content="众筹,京东理财,网上理财,基金理财,金融服务,马上有钱,理财规划,个人理财,家庭理财,第三方理财,投资理财/">
+		<link rel="stylesheet" href="__PUBLIC__/res/bootstrap/css/bootstrap.css"/>
+		<link rel="stylesheet" href="__PUBLIC__/zc.css"/>
+    <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+	</head>
+
+ <body>
+ 		<!--导航条部分-->
+    <!-- Fixed navbar -->
+    <div id="bar1">
+    	<div class="badge">您好，欢迎来到呆萌！</div> 
+      <?php 
+      if($_SESSION["username"])
+      {
+        echo "<a href=''>".$_SESSION["username"]."</a>";
+        echo "<a href='###'  class='_exit'>退出</a>";
+      }
+      else {
+        echo   "<a href=".U('Index/Login/','','')." class='_login'>登陆</a>";
+        echo   "<a href=''>[免费注册]</a>";
+          }
+      ?> 	
+ 	<a href=''>帮助中心</a>
+    </div>
+    <div class="navbar navbar-default navbar-fluid-top" role="navigation" id="topbar">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h3>
+          	     <a  href="#"><img src="__PUBLIC__/res/images/logo.jpg"></a>
+          </h3>
+
+        </div>
+          <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav control_font  ">
+            <li><a class="active_" href="__ROOT__">首页</a></li>
+            <li><a class="active_" href="#contact">浏览项目</a></li>
+            <li><a class="active_" href="#contact">发起项目</a></li>
+            <li><a class="active_" href="#contact">公众平台</a></li>
+            <li><a class="active_" href="#contact">官方活动</a></li>
+          	<li>
+       			 <form class="navbar-form navbar-left" role="search">
+         		<div class="form-group">
+            	<input type="text" class="form-control" placeholder="Search">
+         		</div>
+         		<button type="submit" class="btn btn-success">搜索</button>
+     			 </form>  
+       		</li>
+ 			<li class="my_">
+      <style type="text/css">
+      </style>
+ 			<div id="dropdown_menu">
+ 				<img  class="cg active_" src="__PUBLIC__/res/images/me.png">
+ 				<a href="" class="me active_" >个人资产</a>
+ 				<span class="caret"></span>
+ 				<div id="hid">
+ 				<ul >
+ 					<li>资产总览</li>			
+ 					<li>我的小金库</li>
+ 					<li>我的众筹</li>
+ 					<li>我的资产</li>
+
+ 				</ul>
+ 				</div>
+			</div>
+ 			</li>
+
+          </ul>  
+        </div><!--/.nav-collapse -->
+    </div>
+    <!-- 图片轮播-->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="__PUBLIC__/res/images/2.png" alt="First slide">
+
+        </div>
+        <div class="item">
+          <img src="__PUBLIC__/res/images/1.png" alt="Second slide">
+        </div>
+        <div class="item">
+          <img src="__PUBLIC__/res/images/3.png" alt="Third slide">
+          
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+    <div class="container border_control">
+   	 <div class="row">
+    	<div  class="col-lg-8 col-md-8 col-sm-8 col-xm-8 left1" >
+    		<div class="row underline">
+    			<div class="col-lg-6 col-md-6 col-sm-6 col-xm-6 ">
+    				<span><h2 class="business_project">精品项目</h2> </span>
+    			</div>
+    			<div class="col-lg-6 col-md-6 col-sm-6 col-xm-6 ">
+    			<div class="row sort">
+  				<div class="col-lg-3 col-md-3 col-sm-3 col-xm-3 "><h5><a href="###">综合推荐</a> </h5></div>
+  				<div class="col-lg-3 col-md-3 col-sm-3 col-xm-3"><h5><a href="###" onclick="sort1('1')">人气最高</a></h5></div>
+  				<div class="col-lg-3 col-md-3 col-sm-3 col-xm-3"><h5><a href="###" onclick="sort1('2')">金额最多</a></h5></div>
+  				<div class="col-lg-3 col-md-3 col-sm-3 col-xm-3"><h5><a href="###" onclick="sort1('3')">时间最早</a></h5></div>
+  				</div>
+    			</div>
+   			</div> 
+   			    <div class="cg"></div>
+   		</div>
+   		<div class="col-lg-3 col-md-3 col-sm-3 col-xm-3 right1">
+   		<div class="notice1">
+   		<div class="notice">
+   		<h3><img src="__PUBLIC__/res/images/notice.jpg" />呆萌平台上线啦!</h3>
+   		</div>
+   		<div class="notice_content">
+   			<p>
+   				呆萌众筹正式开放，致力打造不一样的，集梦想、创意、新奇的综合交互众筹平台，欢迎各种小伙伴儿撒欢、调戏、抱大腿！
+   				来吧，在这里我们一起找宝藏！
+   			</p>
+   		</div>
+   		</div>
+   		<div class="wish">
+   			<h3 class="wish_title">许愿墙</h3>        
+        <a href="./Index.php/Index/Wish/">
+        <img  class="ad" src="__PUBLIC__/res/images/wish.jpg">
+      </a>
+   		</div>
+   		<div class="hot_words">
+   			<h3 >热门话题</h3>
+   			<div class="contents">
+        <p><a href="">我觉得360就是一个堂吉诃德，面对几个庞然大物“领</a></p>
+        <p><a href="">我觉得360就是一个堂吉诃德，面对几个庞然大物“领</a></p>
+        <p><a href="">我觉得360就是一个堂吉诃德，面对几个庞然大物“领</a></p>
+          
+        </div>
+   		</div>
+   		   <div class="hot_words">
+   			<h3 >小呆帮助</h3>
+        <div class="contents">
+        <p><a href="">新手帮助</a></p>
+        <p><a href="">如何支持众筹项目</a></p>
+        <p><a href="">我的众筹项目失败了会怎么样？</a></p>
+        <p><a href="">怎样知道项目团队身份是否属实</a></p>
+        <p><a href="">我没有收到回报，这时应怎么做</a></p>
+        <p><a href="">怎么保证我支持的项目得到回报呢？</a></p>
+        </div>
+   		</div>
+        <div class="inspect">
+        <h3 >小调查</h3>
+        <div class="contents">
+       <div>
+      下面是多选<br/>
+      <input   type="checkbox" id="inlineCheckbox1" value="option1"> 选项 1
+      <br/>
+      <input type="checkbox" id="inlineCheckbox2" value="option2"> 选项 2
+      <br/>
+      <input type="checkbox" id="inlineCheckbox3" value="option3"> 选项 3
+      <br/>
+      下面是单选<br/>
+      <input type="radio" name="optionsRadiosinline" id="optionsRadios3" 
+         value="option1" checked> 选项 1
+      <input type="radio" name="optionsRadiosinline" id="optionsRadios4" 
+         value="option2"> 选项 2
+         <br/>
+
+           <div class="form-group">
+          <label for="name">您最希望参与什么样的众筹项目？</label>
+          <textarea class="form-control" rows="3"></textarea>
+             <button type="button" class="btn btn-default btn-sm">
+         提交
+        </button>
+        </div>
+       </div>
+        </div>
+      </div>
+   		</div>
+  	  </div>
+  	 </div>
+
+  	 	<div class="footer">
+  	 		<div class="row">
+  	 			<div class="col-lg-6 col-md-6 col-sm-6 col-xm-6">
+  	 				<img src="__PUBLIC__/res/images/f1.jpg">
+  	 			</div>
+  	 			<div class="col-lg-2 col-md-2 col-sm-2 col-xm-2">
+  	 				<div class="row">
+  	 					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-6">
+  	 						<img src="__PUBLIC__/res/images/wx.png"> <span >关注微信</span> 
+  	 						<img src="__PUBLIC__/res/images/wx1.png">
+  	 					</div>
+  	 					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-6">
+  	 						<img src="__PUBLIC__/res/images/wb.png"> <span >关注微博</span>
+  	 						<a href=""><img src="__PUBLIC__/res/images/wb1.png"></a>
+  	 						<p class="address">weibo.stm.com</p>
+  	 					</div>
+  	 				</div>
+
+  	 			</div>
+  	 			<div class="col-lg-4 col-md-4 col-sm-4 col-xm-4 _email">
+  	 					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-6">
+  	 						 <p>联系邮箱</p> 
+  	 						 <a href=""><img src="__PUBLIC__/res/images/email.png">stylemeng@163.com</a>
+  	 						
+  	 					</div>
+  	 			</div>
+
+  	 		</div>
+  	 		<div class="footer2">
+  	 		<div class="row">
+  	 			<div class="col-lg-10 col-md-10 col-sm-10 col-xm-10">
+  	 			<span ><a href="">关于呆萌</a> </span>|
+  	 			<span><a href="">洽谈合作</a></span>|
+  	 			<span><a href="">加入我们</a></span>|
+  	 			<span><a href="">联系我们</a></span>|
+  	 			<span><a href="">联系我们</a></span>|
+  	 			 <p>Copyright © 2013-2014 stymeng.com 版权所有投资有风险，购买需谨慎</p>
+  	 			</div>
+  	 			<div class="col-lg-2 col-md-2 col-sm-2 col-xm-2">
+  	 				<div>联系我们 <span class="connect">(9:00-22:00)</span> </div>
+  	 				<img src="__PUBLIC__/res/images/tel.png"> <span >110-110-110</span>
+  	 			</div>
+  	 		</div>
+
+
+  	 		</div>
+  	 	</div>
+            <!--js引用写在最后是好习惯-->
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/bootstrap/js/bootstrap.min.js"></script>
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/zc.js"></script>
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/login.js"></script>
+        <script type="text/javascript">
+            var exit_url='{:U("index/login/exit1",'','')}';
+            var sort_url='{:U("index/index/sort1",'','')}';
+            var _home='__ROOT__';
+            var PUBLIC='__PUBLIC__';
+
+        </script>
+		</body>
+	</html>

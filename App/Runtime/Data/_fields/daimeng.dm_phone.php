@@ -1,0 +1,1 @@
+<?php	return array ( 0 => 'item_id', 1 => 'repay_id', 2 => 'user_id', 3 => 'phone_number', '_autoinc' => false, '_type' => array ( 'item_id' => 'int(11)', 'repay_id' => 'int(11)', 'user_id' => 'int(11)', 'phone_number' => 'varchar(32)', ), );?>

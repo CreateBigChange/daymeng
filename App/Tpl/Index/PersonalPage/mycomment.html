@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	   <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/personalPagebase.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/newsCenter.css">
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+	<script src="__PUBLIC__/res/js/uploadPreview.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/mycomment.js"></script>
+	
+	<!--模态框-->
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/modal/css/component.css" />
+	<script src="__PUBLIC__/modal/js/modernizr.custom.js"></script>
+	<!--/模态框-->
+		<script>
+			var comment = '<?php echo U('index/personalPage/mycomment_ajax','',''); ?>';//评论删除的ajax
+		</script>
+			<!-- 富文本编辑器 -->
+	<script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor-min.js"></script>
+	<link rel="stylesheet" href="__PUBLIC__/kindeditor/themes/default/default.css" />
+	<script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
+
+	<script>
+		var editor;
+		KindEditor.ready(function(K) {
+			editor = K.create('textarea[name="content"]', {
+				resizeType : 1,
+				allowPreviewEmoticons : false,
+				allowImageUpload : false,
+				items : [
+					'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+					'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+					'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+			});
+		});
+	</script>   
+	<!-- 富文本编辑器 -->
+	<title>消息中心-评论</title>
+</head>
+<body>
+<!--模态框-->
+	<div class="md-modal md-effect-1" id="modal-1">
+    <div class="md-content" style="width:800px;">
+        <h3>消息回复</h3>
+        <div>
+
+			<!-- 富文本编辑器 -->
+		 	<DIV class="msg_sender" id="js_msgSender">
+			<form method="post" action="<?php echo U('index/personalPage/comment_submit_ajax','',''); ?>">
+				<textarea id="textarea" name="content" style="width:400px;height:300px;visibility:hidden;"></textarea>
+				<input id="from_id" type="hidden" name="from_id" value="value"/>
+					<p style="text-align: right;padding-right: 100px;">
+					
+				<!-- 	<a href="javascript:;" class="md-close" style="font-size: 15px;color: #33A600;margin-right:100px;">关闭</a>
+					<a href="javascript:;" id="submit" style="font-size: 15px;color: #33A600;">提交</a> -->
+					<a href="javascript:;" class="md-close" style="font-size: 15px;color: #33A600;margin-right:100px;">关闭</a>
+					<input type="submit" style="font-size:15px;color:#33A600;cursor:pointer">
+
+					</p>
+			</form>
+			</DIV>
+        </div>
+    </div>
+	</div>
+	
+	<div class="md-overlay"></div><!-- the overlay element -->
+
+<!--/模态框-->
+	<!-- 头部 -->
+<include file="Publicmodel:head" />
+	<!-- 主内容去区-->
+	<div class="main clearfix">
+		<div class="setting wrap">
+			<div class="setting-title clearfix">
+			<h3>消息中心</h3>
+			</div>
+			<div class="setting-content clearfix">
+				<div class="setting-menu">
+					<ul class="clearfix">
+						<li><a class="icons msg ie6fixpic" href="{:U('/news','','')}">私信</a></li>
+						<li><a class="icons rec-com ie6fixpic" href="{:U('/system','','')}">系统消息</a></li>
+						<li class="select"><a class="icons rec-com ie6fixpic" href="{:U('/comment','','')}">评论</a></li>
+					</ul>
+				</div>
+				<div class="setting-detail">
+				<!--setting address static-->
+				<div class="setting-address">
+					<h3 class="green">我的动态</h3>
+					<p>可查看您收到的社区评论和项目评论</p>
+					<!--address tab 地址管理列表 static-->
+				<!--setting address end-->
+				</div>
+				<div class="message-item clearfix" style="margin-top:50px;">					
+					<div class="bd">
+						<ul class="clearfix">
+						<volist name="data" id="vo">
+							<li class="talk-list">
+								<div class="talk-face">
+									<a href="/home/id-282607" target="_blank"><img src="__PUBLIC__/res/images/personalPage/visitor1.png"></a>
+								</div>
+								<div class="msg-box">
+									<div class="user-name"><a href="/person/{$vo.uid}" target="_blank">{$vo.niker}</a> 在&nbsp;&nbsp;<span style="color:#157C8C;">{$vo.c1}</span>&nbsp;&nbsp;中评论你&nbsp;&nbsp;<span class="gray">{$vo.time}</span></div>
+									<div class="msg-cnt">{$vo.content}</div>
+									<div class="talk-handle tr">
+										<a class="detele" data="{$vo.id}">删除</a>
+							<!--模态框--><a from_id="{$vo.from_id}" class="green Js-addr-modify md-trigger" data-modal="modal-1">回复</a><!--/模态框-->
+									</div>
+								</div>
+							</li>
+						</volist>
+						</ul>
+						<div class="page tr">
+							         						</div>
+					</div>
+				<!--message end-->
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<!-- 尾部 -->
+<include file="Publicmodel:person_footer" />
+		<!--模态框-->
+		<div class="md-overlay"></div><!-- the overlay element -->
+		<script src="__PUBLIC__/modal/js/classie.js"></script>
+		<script src="__PUBLIC__/modal/js/modalmycomment.js"></script>
+		<script>
+			var polyfilter_scriptpath = '/js/';
+		</script>
+		<script src="__PUBLIC__/modal/js/cssParser.js"></script>
+		<script src="__PUBLIC__/modal/js/css-filters-polyfill.js"></script>
+
+	<!--/模态框-->
+</body>
+</html>

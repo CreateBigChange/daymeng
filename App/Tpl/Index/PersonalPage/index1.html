@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	   <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/personalPagebase.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/myPage.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/modal/css/component.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/newsCenter.css">
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+	<script src="__PUBLIC__/modal/js/modernizr.custom.js"></script>
+	<script src="__PUBLIC__/res/js/uploadPreview.js"></script>
+	<script>
+		mypage='<?php echo U('index/personalPage/myPage_ajax','','');  ?>';
+		change_info_ajax='<?php echo U('index/personalPage/change_info_ajax','','');  ?>';
+	</script>
+	<script src="__PUBLIC__/res/js/mypage.js"></script>	
+		<!--模态框-->
+
+
+	<!--/模态框-->
+	<title>个人中心-管理信息</title>
+</head>
+<body>
+
+<!--模态框-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="md-modal md-effect-1" id="modal-1">
+    <div class="md-content" style="height:500px;width:900px">
+        <h3>系统消息</h3>
+        <div>
+ 
+            	
+
+
+	<div  style="display:none" class="editor">
+						<script>
+						$(function () {
+							$("#up").uploadPreview({ Img: "ImgPr", Width: 120, Height: 120 });
+						});
+						</script>
+							   
+
+						<form method="post" action="{:U('index/personalPage/mypage_upload','','')}" enctype="multipart/form-data">
+							<div style="float:left;margin-left:5px;">
+							<table>
+							<tr>
+								<td>姓名</td><td colspan="3"><input id="name" size="30"type="text" name="name" value="" /></td>
+		
+							</tr>
+							<tr>
+								<td>性别</td><td colspan="3"><input id="sex" size="30" type="text" name="sex" value="" /></td>
+							</tr>
+							<tr>	
+								<td>地址</td><td colspan="3"><input id="address" size="30" type="text" name="address" value=""/></td>
+							</tr>
+							<tr>
+								<td>出生日期</td><td colspan="3"><input id="birth" size="30" type="text" name="birth" value=""/></td>
+							</tr>
+							<tr>
+								<td>昵称</td><td colspan="3"><input id="niker"size="30" type="text" name="niker" value=""/></td>
+							</tr>
+							<tr>
+								<td>邮箱</td><td colspan="3"><input id="email" size="30" type="text" name="e_mail" value=""/></td>
+							</tr>
+							<tr>
+								<td>个人说明</td><td colspan="3"><textarea id="person_description" style="width:300px;height:100px"type="text" name="person_description">www</textarea></td>
+							</tr>
+							<tr>
+
+							</tr>
+							</table>
+							</div>							
+								
+							<div id="header" style="float:right;width:200px">
+								<h1 class="title">
+									<strong>个人头像</strong>
+								</h1>
+								<div id="main">
+									<div class="card" id="up_img">
+									   
+										<div class="summary">
+											<ul>
+												<li><span style="color: Green">头像上传:</span>
+													<div style=" width:250px;">
+														<img id="ImgPr" width="250" style="display: inherit;" /></div>
+													<input type="file" name="photo1" id="up" />
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+			
+						</form>
+					</div>
+							<button class="ok" style="float:left;margin-left:100px;margin-top:100px;">确认</button>
+
+							<button class="md-close" style="float:left;margin-left:10px;margin-top:100px;">关闭</button> 	
+							
+									         
+        
+            
+
+        </div>
+    </div>
+	</div>
+	
+	<div class="md-overlay"></div><!-- the overlay element -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--/模态框-->
+
+	<!-- 头部 -->
+<include file="Publicmodel:head" />
+
+	<!-- 主内容去区-->
+	<div class="main clearfix">
+		<div class="setting wrap">
+			<div class="setting-title clearfix">
+			<h3>个人中心</h3>
+			</div>
+			<div class="setting-content clearfix">
+				<div class="setting-menu">
+					<ul class="clearfix">
+						<li class="select" ><a class="icons msg ie6fixpic" href="{:U('index/personalPage/myPage','','')}" style="width:100%">信息修改</a></li>
+						<li ><a class="icons rec-com ie6fixpic" href="{:U('index/personalPage/changePasswd','','')}">密码修改</a></li>
+						<li><a class="icons rec-com ie6fixpic" href="{:U('index/personalPage/manageFriends','','')}">好友管理</a></li>
+						<li><a class="icons rec-com ie6fixpic" href="{:U('index/personalPage/addressManage','','')}">收货地址管理</a></li>
+						<li><a class="icons rec-com ie6fixpic" href="{:U('index/personalPage/tradeInfo','','')}">我的交易信息</a></li>
+					</ul>
+				</div>
+				<div class="main-right" style="width:70%;">
+					<div class="person-info">
+						<h1>{$person_info[0]["niker"]}</h1>
+						<h5>{$person_info[0]["person_description"]}</h5>
+						<ul><li>{$person_info[0]["sex"]}</li><li>{$person_info[0]["address"]}</li></ul>
+						
+						<h4 style="margin-top:20px;"><a  class="change Js-addr-modify md-trigger" href="javascript:void(0)" data-modal="modal-1" style="width:150px;"><img src="__PUBLIC__/res/images/edit.png" width="30px" height="30px">编辑个人资料</a></h4>
+					</div>
+				<div style="height:500px">
+					<volist name="data" id="vo">
+					<div class="person-space" style="border-top:5px double #e6eaed">
+						<div class="article">
+							<div class="content">
+							<empty name="vo.img">
+							<else />
+							<div class="content-img"><img src="__PUBLIC__/res/images/community/{$vo.img}"></div>
+							</empty>
+
+								<div class="content-text">
+									<!--<h3><a href="">在“被停产”后，360安全路由器最近怎么样了？</a></h3>-->
+									<p>{$vo.content}</p>
+									<!--隐藏div来判断是第一还是第二评论-->
+									<div id="jupage" style="display:none">
+									<empty name="vo.from_id"><else />yes</empty>
+									</div>
+									<ul ><a href="javascript:void(0)"><li class="delete">删除</li></a><li>发表于{$vo.time}</li></ul></h3>
+									<div id="id" style="display:none">
+									{$vo.id}
+									</div>
+								</div>
+							</div>
+
+							<div class="meta"></div>
+						</div>
+					</div>
+					</volist>
+				</div>
+<!--			
+					<div class="person-space" >
+						<div class="article">
+							<div class="content">
+								<div class="content-img"><img src="__PUBLIC__/res/images/personalPage/content_img.jpg"></div>
+								<div class="content-text">
+									<h3><a href="">在“被停产”后，360安全路由器最近怎么样了？</a></h3>
+									<p>前不久周鸿祎曾在其新书发布会上表示：“路由器产品不做了，项目打算停掉”。这一席话引发了不少媒体的误读和友商的不解。。。</p>
+									<ul><li>删除</li><li>发表于9月9日</li></ul></h3>
+								</div>
+							</div>
+
+							<div class="meta"></div>
+						</div>
+					</div>
+
+					<div class="person-space">
+						<div class="article">
+							<div class="content">
+								<div class="content-img"><img src="__PUBLIC__/res/images/personalPage/content_img.jpg"></div>
+								<div class="content-text">
+									<h3><a href="">在“被停产”后，360安全路由器最近怎么样了？</a></h3>
+									<p>前不久周鸿祎曾在其新书发布会上表示：“路由器产品不做了，项目打算停掉”。这一席话引发了不少媒体的误读和友商的不解。。。</p>
+									<ul><li>删除</li><li>发表于9月9日</li></ul></h3>
+								</div>
+							</div>
+
+							<div class="meta"></div>
+						</div>
+					</div>	
+-->					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- 尾部 -->
+<include file="Publicmodel:person_footer" />
+			<!--模态框-->
+		<div class="md-overlay"></div><!-- the overlay element -->
+		<script src="__PUBLIC__/modal/js/classie.js"></script>
+		<script src="__PUBLIC__/modal/js/modalEffects.js"></script>
+		<script>
+			var polyfilter_scriptpath = '/js/';
+		</script>
+		<script src="__PUBLIC__/modal/js/cssParser.js"></script>
+		<script src="__PUBLIC__/modal/js/css-filters-polyfill.js"></script>
+		<script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/mySupportItem.js"></script>
+	
+	<!--/模态框-->
+</body>
+</html>

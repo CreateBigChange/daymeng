@@ -1,0 +1,239 @@
+a{text-decoration: underline;} /*链接无下划线none,有为underline*/
+a:link {color: #52A610;text-decoration: underline;} /*未访问的链接 */
+a:visited {color: #65038e;text-decoration: underline;} /*已访问的链接*/
+a:hover{color: #F7C763;text-decoration: underline;} /*鼠标在链接上 */
+a:active {color: #ff0000;text-decoration: underline} /*点击激活链接*/
+.head
+{
+	width:100%;
+	height:60px;
+	background:#52AA10;
+}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+body
+{
+	letter-spacing:1px;
+}
+.main_nav
+{
+	width:100%;
+	height:10px;
+	background:#EFF3EF;
+}
+.commniuty_img
+{
+	width:50px;
+}
+.niker
+{
+	width:50px;
+	overflow: hidden; 
+}
+.talk_word
+{
+	float:left;
+}
+.head_img
+{
+margin-top:10px;
+margin-left:175px;
+height:40px;
+}
+.all
+{
+	background:#EFF3EF;
+}
+.talk
+{
+	width:100%;
+	height:210px;
+	background:#ffffff;
+	margin-top:20px;
+	border:1px solid;
+	border-color:#C6C3C6;
+}
+.talk_top
+{
+	float:left;
+	margin-top:5px;
+	margin-left:8px;
+	font-size:14px;
+}
+.talk_img
+{
+	margin-left:50px;
+	float:left;
+	width:20px;
+}
+.main_content
+{
+	width:100%;
+	background:#ffffff;
+	float:left;
+}
+
+.hiden
+{
+	width:100%;
+	background:#F7F7F7;
+	height:20px;
+}
+.main_form
+{
+	margin-left:60px;
+	clear:both;
+
+	
+}
+
+.word
+{
+	margin-top:20px;
+	margin-left:70px;
+	font-weight: 700;
+	color:#333;
+	font-size:18px;
+	width:100px;
+	border-bottom:1px solid #7B9A39;
+}
+.commuty
+{
+	margin-top:15px;
+}
+.title
+{
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:10px;
+	margin-bottom:20px;
+}
+.first_title
+{
+	margin-top:10px;
+	margin-left:70px;
+}
+.pangbian
+{
+		margin-top:35px;
+}
+.info
+{
+	float:left;
+	margin-top:10px;
+	margin-left:10px;
+}
+.second_content
+{
+	width:80%;
+	float:left;
+	margin-left: 10px;
+	margin-top:15px;
+}
+.first_img
+{
+	width:200px;
+	height:150px;
+	margin-left:20px;
+}
+.second
+{
+	
+}
+.hid
+{
+	width:100%;
+	background:#F7F7F7;
+	height:20px;
+}
+.hid1
+{
+	width:100%;
+	background:#F7F7F7;
+	height:20px;
+}
+.person_name
+{
+	font-size:24px;
+	color:#94C729;
+	margin-left:30px;
+	
+}
+.attention
+{
+	float:left;
+}
+.topic_kind
+{
+	clear:both;
+}
+.funs
+{
+	float:left;
+	margin-left:10px;
+}
+.person_img
+{
+	margin-top:20px;
+	width:150px;
+}
+.change
+{
+	width:100%;
+	clear:both;
+}
+.person_community
+{
+	width:100%;
+	float:left;
+	clear:both;
+	border-top:1px solid #D6D3D6;
+}
+.content_1
+{
+	float:left;
+}
+
+.person_community_pic
+{
+	margin-left:5px;
+	margin-top:10px;
+	float:left;
+}
+.name
+{
+	color:#E7E7E7;
+}
+.other_content
+{
+	float:left;
+	
+}
+.botton
+{
+	clear:both;
+	color:#E7E7E7;
+	float:left;
+}
+.second_repay_content
+{
+	float:left;
+}
+.small_pic
+{
+	width:15px;
+	height:15px;
+	float:right;
+	margin-right:5px;	
+	border:1px red solid;
+}
+.main_time
+{
+	margin-top:5px;
+	float:left;
+}
+.second
+{
+	display:none;
+}
+
+
+

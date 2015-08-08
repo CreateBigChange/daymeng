@@ -1,0 +1,33 @@
+	<!-- 头部 -->
+	<div class="header">
+	  <div class="wrap clearfix" pbid="header">
+	    <div class="img-logo">
+	      <h1>
+	        <a title="呆萌众筹" class="ie6fixpic" href="{:U('/index','','')}" alt="呆萌众筹">呆萌众筹</a>
+	      </h1>
+	    </div>
+	    <!--menu start-->
+	    <div class="menu">
+	      <ul class="clearfix">
+	          <li><a href="{:U('/my','','')}">个人中心 </a></li>
+	          <li><a href="{:U('/support','','')}">我的众筹 </a></li>
+	          <!-- <li><a href="/open">我的好友 </a></li> -->
+	          <li><a href="{:U('/news','','')}">消息中心 &nbsp;<span style="color:red;font-size:12px;" >{:session('news')}</span></a></li>
+	          <li><a href="{:U('/mp/index','','')}">公众平台 </a></li>
+	       
+	      </ul>
+
+	  
+	    </div>
+	    <div style="float:right;">
+		    <a href="{:U('/person/'.session("user_id"))}"><img style="width:50px;height:50px;margin-top:20px;" src="/Public/res/images/person_img/{$person_info[0]['img']}" /></a>
+		  <span style="margin-left:5px;margin-top:-10px;">  
+		  	<a href="/my">{$person_info[0]["niker"]}</a>&nbsp;|
+		   		 <a href="{:u('exit1')}" calss="one" style="margin-left:5px;margin-top:-10px;">退出</a>
+		    </span>
+	    </div>
+	   </div>
+    <!-- user menu end-->
+  	</div>
+
+

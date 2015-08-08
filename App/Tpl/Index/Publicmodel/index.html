@@ -1,0 +1,103 @@
+    <!--导航条部分-->
+
+    <!-- Fixed navbar -->
+
+    <div id="bar1">
+
+    <div class="badge">您好，欢迎来到呆萌！</div> 
+
+     <?php 
+
+      if($_SESSION["user_id"])
+
+      {
+
+        echo "<a href=".U('/my','','').">".$_SESSION["niker"]."</a>";
+
+        echo "<a href='###'  class='_exit'>退出</a>";
+
+      }
+
+      else {
+
+        echo   "<a href=".U('/login','','')."  target='_blank'>登录</a>";
+
+        echo   "<a href=".U('/register','','')." target='_blank'>[免费注册]</a>";
+
+          }
+
+      ?>  
+
+  <a href="{:U('/help/124','','')}">帮助中心</a>
+
+      
+
+    </div>
+
+    <div id="head_">
+
+      <ul >
+
+        <li style="margin-left:100px;"><a href="{:U('/index','','')}"><img class="top_img" src="__PUBLIC__/res/images/top_pic/1.9.png" style="width:160px"></a></li>
+
+        <li><a class="active_" style=" text-decoration: none;" href="{:U('/index')}" onfocus="this.blur();">首页</a></li>
+
+        <li><a class="active_" style=" text-decoration: none;"href="{:U('/item','','')}" target="_blank">浏览项目</a></li>
+
+        <li><a class="active_" style=" text-decoration: none;"href="{:U('/start/agreement','','')}" target="_blank">发起项目</a></li>
+
+      
+
+        <li><a class="active_" style=" text-decoration: none;"href="{:U('/community','','')}" target="_blank">呆萌社区</a></li>
+
+        <li>
+
+   <form action="{:U('index/items/index')}" method="post" >
+
+            <input class="search_content" type="text" name="search_content" style="width:200px;" placeholder="搜索喜爱的项目" maxlength="15" />
+
+            <input class="search_sub" type="submit" style="color:#fff;width:70" value="搜索" />
+
+          </form>
+
+        </li>
+
+        <li    style="margin-left:35px;">
+
+          <ul id="hid"style="display:inline;">
+
+            <li class="menus" style="display:block;">  
+
+            <img class="person_img" src="__PUBLIC__/res/images/small_pic/person.png" style="width:46px;"><a  style=" text-decoration: none;color:#33a600;" href="{:U('/person/'.session("user_id"))}" >个人中心</a>
+
+            </li>
+
+            <li  class="top_dashed" style="padding:0px;margin:0px;">
+
+              
+
+            </li>
+
+            <li class="person_blur" style="display:none;padding:5px 55px 5px 55px;margin:10px 0px"><a style="text-decoration:none;;"href="{:U('/support','','')}">我的众筹</a></li>
+
+            <li class="person_blur"  style="display:none;padding:5px 55px 5px 55px;margin:10px 0px"><a style="text-decoration:none;;"href="{:U('/news','','')}">消息中心</a></li>
+
+            <li class="person_blur"  style="display:none;padding:5px 55px 5px 55px;margin:10px 0px"><a style="text-decoration:none;;"href="{:U('/my','','')}">个人信息</a></li>
+
+          </ul>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+    <script type="text/javascript">
+
+    var check_rem="{:U('publicmodel/check_rem','','')}";
+
+    var exit_url="{:U('/index/publicmodel/exit1','','')}";
+
+    _home="{:U('/Index','','')}";
+
+    </script>

@@ -1,0 +1,61 @@
+<meta name="renderer" content="webkit">//高速渲染模式目前只有360支持
+
+栅格布局：xm sm md  lg 特小 小中大屏幕
+col-*-*
+
+符号
+&raquo  <<
+<span class="caret"> 三角形
+&copy 版权
+<code>file://</code> 加强
+
+
+sr-only  隐藏区域
+navbar：导航条
+
+<div class="navbar-header">  最前方导航
+<div class=" navbar navbar-default"  默认颜色的导航条   \\inverse黑色
+<div class="navbar navbar-inverse navbar-fixed-top"  navbar-fixed-top   底部的距离  
+ 
+<a class="navbar-brand" href="#">Project name</a>   居中  字体加重
+<div class="navbar-collapse collapse">  使上方紧凑
+ <ul class="nav navbar-nav">   导航条   navbar-nav使在一行
+ class="active" 标记为活动链接
+ <li class="dropdown"> 下拉框
+ nav 用来控制格式
+
+dropdown:
+ <ul class="dropdown-menu" role="menu">   下拉框
+ <li class="divider"></li> 分割线
+ <li class="dropdown-header">Nav header</li>   头信息   ，或者说是提示信息 
+ <ul class="nav navbar-nav navbar-right">  在右边显示的导航条
+ 
+<div class="jumbotron">一块文本区域
+<a class="btn btn-lg btn-primary" 带有颜色的按钮   
+button 
+ <button type="button" class="btn btn-lg btn-success">Success</button>  颜色设置
+ btn-block  自动填充补完
+ 
+ 
+table:
+默认 
+table-striped  珊栏格子
+table-bordered 表格的竖线、边框
+<img class="img-thumbnail" alt="A generic square placeholder...">  文字图片
+
+
+label:
+ <h1><span class="label label-default">Default</span></h1>  文字标签  默认颜色
+ 
+badges: 徽章
+  <li  class="active"><a href="#">Home <span class="	badge">42</span></a></li>
+
+alert  警告
+  <div class="alert alert-success" role="alert"> <strong>Well done!</strong> You successfully read this important alert message. </div>
+progress bars  进度条
+<div class="progress">
+<div class="progress-bar progress-bar-success" style="width: 60%"></div>
+placeholder="aaaa"  提示信息
+
+container    窄屏显示
+site-wrapper 包装 封面

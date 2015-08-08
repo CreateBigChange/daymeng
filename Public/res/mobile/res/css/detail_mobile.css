@@ -1,0 +1,29 @@
+a{
+	text-decoration:none;
+}
+.btn_self
+{
+   border-radius: 3px;
+    color: #333;
+    font-size: 14px;
+    padding: 7px 24px;
+    text-align: center;
+	background: none repeat scroll 0 0 #33a600;
+	width:82px;
+	height:32px;
+}
+.btn_self1
+{
+   border-radius: 3px;
+    color: #333;
+    font-size: 14px;
+    padding: 7px 24px;
+    text-align: center;
+	background: none repeat scroll 0 0 #33a600;
+	width:82px;
+	height:32px;
+}
+.title
+{
+	color:#33A600;
+}

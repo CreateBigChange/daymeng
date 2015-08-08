@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+  <head>
+
+    <title>发起项目</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+   <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+
+    <meta name="description" content="呆萌网,呆萌首页,大学生众筹,大学生社交，呆萌众筹,众筹公益,呆萌基金,呆萌公益,大学生公益"/>
+
+
+
+    <meta name="Keywords" content="呆萌网,呆萌首页,大学生众筹,众筹网，大学生社交/">
+
+    <link rel="stylesheet" href="__PUBLIC__/res/bootstrap/css/bootstrap.css"/>
+
+    <!-- <link rel="stylesheet" href="__PUBLIC__/zc.css"/> -->
+
+    <link rel="stylesheet" href="__PUBLIC__/res/css/hf.css"/>
+
+    <link rel="stylesheet" href="__PUBLIC__/res/css/start_item.css"/>
+
+    <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+
+
+
+  </head>
+
+
+
+ <body>
+
+    <!--导航条部分-->
+
+    <!-- Fixed navbar -->
+
+<include file="Publicmodel:index" />
+
+<!--头文件的包含-->
+
+    <!-- 主体部分-->
+
+    <div class="container">
+
+    <div class="title">
+
+      <div class="col-md-3 title-content">
+
+        发起项目
+
+      </div>
+
+      <div class="col-md-9"></div>
+
+    </div>
+
+    <div class="content1">
+
+     <div class="col-md-6 content-img"><img src="__PUBLIC__/res/images/top_pic/startitem.png" width="300px;" height="260;" style="margin-left:50px;margin-top:10px;"></div>
+
+      <div class="col-md-6 img-right">
+
+        <h4>屌丝们的神器，开启属于自己的众筹时代......</h4>
+
+        <p>呆萌众筹是一家可以帮助您实现梦想的网站，在这里您可以发布您的梦想、创意或创业计划等·······筹人、筹钱、筹伙伴，通过呆萌网让一切不可能变为可能，让一切可能变为现实！马上开启属于自己的奇妙“众筹”之旅！</p>
+
+        <p class="content-xy"><input type="checkbox" id="agreement">阅读并同意呆萌众筹 <a href="{:U('/help/125')}" target="_blank">《服务协议》 </a></p>
+
+        <p><a href="javascript:;" id="startitem"><button type="button" class="btn  btn-danger" >立即发起项目</button></a></p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+        <include file="Publicmodel:t_login" />
+
+        <include file="Publicmodel:footer" />
+
+  <script language="javascript" type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+
+        
+
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/bootstrap/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+
+            // var exit_url='{:U("index/login/exit1",'','')}';
+
+            var sort_url='{:U("index/index/sort1",'','')}';
+
+            var opnion_url='{:U("index/index/opnion",'','')}';
+
+            var complaint_url='{:U("index/index/complaint",'','')}';
+
+            var _home='__APP__';
+
+            var PUBLIC='__PUBLIC__';
+
+            var sign='{$sign}';
+
+        </script>
+
+  <script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/hf.js"></script>
+
+  <script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/login.js"></script>
+
+        <!-- 只有当用户点击确定协议时才能进行下一步 -->
+
+        <script type="text/javascript">
+
+
+
+           $('#agreement').click(function(){
+
+            var result=$('#agreement')[0].checked;
+
+            if (result) {
+
+              $('#agreement').bind('click',function(){
+
+                $('#agreement')[0].checked=false;
+
+              });
+
+            }
+
+            else{
+
+                $('#agreement').bind('click',function(){
+
+                   $('#agreement')[0].checked=true;
+
+              });
+
+            }
+
+          });
+
+
+
+            $('#startitem').click(function(){
+
+              if (sign==1 && $("#agreement")[0].checked) {
+
+                  $("#startitem").attr("href","{:U('/start/info')}");
+
+              }
+
+              if (sign==1 && !$("#agreement")[0].checked) {
+
+                  alert('请先同意协议！');
+
+              }
+
+              if (sign==0) {
+
+                   $("#t_login").click();
+
+              }          
+
+            });
+
+        </script>
+
+    </body>
+
+  </html>

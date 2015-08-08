@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	   <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/personalPagebase.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/newsCenter.css">
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/myInterstItem.js"></script>
+		<script>
+		 myInterstItem_ajax ="{:U('index/personalPage/myInterstItem_ajax','','')}";
+	</script>
+	<title>我的众筹-感兴趣的项目</title>
+</head>
+<body>
+	<!-- 头部 -->
+<include file="Publicmodel:head" />
+	<!-- 主内容去区-->
+	<div class="main clearfix">
+		<div class="setting wrap">
+			<div class="setting-title clearfix">
+			<h3>我的众筹</h3>
+			</div>
+			<div class="setting-content clearfix">
+				<div class="setting-menu">
+					<ul class="clearfix"><!--
+						<li><a class="icons msg ie6fixpic" href="{:U('index/personalPage/myCrowdfunding','','')}">发起的项目</a></li>-->
+						<li><a class="icons rec-com ie6fixpic" href="{:U('/support','','')}">支持的项目</a></li>
+						<li class="select"><a class="icons rec-com ie6fixpic" href="{:U('/atten','','')}">关注的项目</a></li>
+					</ul>
+				</div>
+				<div class="setting-detail">
+				<div class="setting-address">
+					<h3 class="green">关注的项目</h3>
+					<p>您可以查看您感兴趣的项目详情</p>
+					<!--address tab 地址管理列表 static-->
+					<div class="address-tab" id="addr_list" style="display: block; padding-top:50px;">
+<!-- 						<div class="btn-add">
+							<a class="btn-base btn-red-h30 common-sprite" onclick="add_addr()">
+								<span class="common-sprite">添加地址</span>
+							</a>
+						</div> -->
+						<!-- 所有，审核通过，未通过分类显示 -->
+						<!-- <div class=""></div> -->
+						<div class="ads-list">
+													<table>
+								<colgroup>
+									<col width="70">
+									<col width="150">
+									<col width="300">
+									<col width="155">
+									
+								</colgroup>
+								<thead>
+									<tr>
+										<th>图片</th>
+										<td>项目名称</td>
+										<td>关注日期</td>
+										<td>操作</td>
+									</tr>
+								</thead>
+								<tbody>
+								<volist name="data" id="vo">
+									<tr>
+										<th><a href="__GROUP__/detail/index.php?item_id={$vo['id']}"><img style="width:50px;" src="__PUBLIC__/res/images/Items/{$vo.items_img}"></a></th>
+										<td>{$vo.title}</td>
+										<td>2014-9-8</td>
+										<td data-id="57264"><div style="display:none">{$vo.id}</div><a class="green Js-addr-del del" href="javascript:;">取消关注</a></td>
+									</tr>
+								</volist>
+
+								</tbody>
+							</table>
+													</div>
+					</div>
+				</div>
+				<!--setting address end-->
+			</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- 尾部 -->
+<include file="Publicmodel:person_footer" />
+	
+</body>
+</html>

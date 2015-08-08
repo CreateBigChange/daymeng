@@ -1,0 +1,29 @@
+$(document).ready(function(){
+$(".md-close").click(function(){
+	return false;
+})
+	$(".detele").click(function(){
+		$(this).parents(".talk-list").hide();
+		//alert("ww");
+		//id=$(this).prev().text().match(/\d+/g);
+		id=$(this).attr("data");
+		//alert(id);
+		//alert($(this).prev().text().length)
+		$.ajax({
+			url:comment,
+			datatype:"json",
+			type:"post",
+			data:{id:id},//ajax取得评论的范围
+			success:function(data)
+			{
+				//alert(data);
+				//window.location.replace(location.href);
+				//alert("success")
+			},
+			error:function()
+			{
+				alert("error!");
+			}
+		});
+	})
+})

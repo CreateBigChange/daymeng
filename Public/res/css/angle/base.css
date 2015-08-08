@@ -1,0 +1,1042 @@
+/* reset */
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+blockquote,
+pre,
+address,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+table,
+tr,
+th,
+td,
+form,
+label,
+input,
+textarea,
+object,
+iframe {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    outline: 0;
+}
+
+hr {
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    border: none;
+}
+
+pre {
+    overflow: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    font-weight: inherit;
+}
+
+
+/* typography */
+body {
+    color: #ccc;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+a img {
+    margin: 1px;
+}
+
+a:hover img {
+    margin: 0;
+    border: 1px solid #0f0;
+}
+
+a img.noborder {
+    margin: inherit;
+}
+
+a:hover img.noborder {
+    margin: inherit;
+    border: none;
+}
+
+pre,
+code,
+kbd,
+samp,
+var {
+    font-family: Monaco, monospace;
+    background: #333;
+    color: #fff;
+}
+
+del {
+    color: #666;
+    text-decoration: line-through;
+    font-weight: normal;
+}
+
+ins {
+    text-decoration: none;
+    border-bottom: 1px dotted #fff;
+}
+
+pre,
+p {
+    margin-bottom: 2em;
+    line-height: 2em;
+}
+
+th, td {
+    line-height: 2em;
+}
+
+pre {
+    background: rgb(102, 102, 102);
+    background: rgba(102, 102, 102, 0.5);
+    padding: 24px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+}
+
+blockquote {
+    margin: 0 24px 2em 0;
+    padding: 24px 48px;
+    background: black url(images/bg-blockquote.gif) 24px 30px no-repeat;
+    background: rgba(0, 0, 0, 0.5) url(images/bg-blockquote.gif) 24px 30px no-repeat;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+}
+
+blockquote p {
+    margin-bottom: 0;
+}
+
+blockquote p + p {
+    margin-top: 2em;
+}
+
+ol,
+ul {
+    line-height: 2em;
+    margin-bottom: 2em;
+}
+
+h1 {
+    color: #fff;
+    font-weight: bold;
+}
+
+h1, h2 {
+    font-size: 2em;
+    line-height: 1em;
+}
+
+.project h2,
+h3 {
+    font-size: 1.5em;
+    line-height: 1.33333em;
+}
+
+h4 {
+    font-size: 1em;
+    line-height: 2em;
+}
+
+.font-size-base {
+    font-size: 1em;
+    line-height: 2em;
+}
+
+.add-bottom-margin {
+    margin-bottom: 24px; /* I hate to mix ems and px... but really, we always want this to be 24px / 2em (if 1em is 12px) */
+}
+
+.center-text {
+    text-align: center;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+em,
+strong {
+    color: #fff;
+}
+
+a {
+    color: #0f0;
+}
+
+a:hover {
+    color: #0f0 !important;
+    text-decoration: none;
+}
+
+#nav ul {
+    font-size: 2em;
+    line-height: 1em;
+    text-transform: lowercase;
+    margin-bottom: 0;
+}
+
+#nav a {
+    color: #f0f;
+    text-decoration: none;
+}
+
+input,
+textarea {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #f0f;
+    font-size: 12px;
+}
+
+input {
+    line-height: 12px;
+}
+
+textarea {
+    line-height: 24px;
+}
+
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus {
+    color: #0f0 !important;
+}
+
+label,
+input.button {
+    color: #000 !important;
+    font-weight: bold;
+}
+
+#footer label,
+#footer input.button {
+    color: #333;
+}
+
+label span {
+    color: #ccc;
+    font-size: 0.75em;
+}
+
+#footer label span {
+    color: #333;
+}
+
+#head ul {
+    line-height: 1em;
+    text-transform: lowercase;
+}
+
+h1 a, h2 a, h3 a {
+    color: #f0f;
+    text-decoration: none;
+}
+
+h3.commentHeader a {
+    color: #0f0;
+    text-decoration: underline;
+}
+h3.commentHeader a:hover {
+    text-decoration: none;
+}
+
+.content dl {
+    line-height: 2em;
+    margin-bottom: 2em;
+}
+
+.content dl dt {
+    font-weight: bold;
+}
+
+.content dl dd {
+    margin-left: 1em;
+}
+
+dl.topics {
+    height: 2em;
+    line-height: 2em;
+    margin-bottom: 0;
+}
+
+dl.topics dt {
+    color: #999;
+    font-weight: bold;
+    padding-right: 1ex;
+    font-size: 0.75em;
+    text-transform: lowercase;
+}
+
+dl.topics dd {
+    padding-right: 1ex;
+    font-size: 0.75em;
+    margin-left: 0;
+}
+
+dl#allTopics dt {
+    color: #ccc;
+    font-size: 1em;
+}
+
+dl#allTopics dd {
+    font-size: 1em;
+}
+
+.content ul {
+    list-style-type: disc;
+    margin-left: 1.5em;
+}
+
+.content ol {
+    margin-left: 1.5em;
+}
+
+.download.padding {
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+}
+
+.content ul.download {
+    margin-left: 0;
+    list-style: none;
+}
+
+.download a {
+    display: block;
+    padding-left: 24px;
+    background: url(images/icon-link-file.gif) 0 center no-repeat;
+}
+
+.download a:hover {
+    background-position: -552px center;
+}
+
+.download a[href$=".zip"] {
+    background-image: url(images/icon-link-zip.gif);
+}
+
+.commentsLink a {
+    color: #f0f;
+    text-decoration: none;
+}
+
+ul.pagination li {
+    padding-right: 1ex;
+}
+
+#footer {
+    color: #333;
+}
+
+#footer .padding {
+    color: #ccc;
+}
+
+::-moz-selection {
+	background: #f90;
+	color: #fff;
+}
+
+::selection {
+	background: #f90;
+	color: #fff;
+}
+
+
+/* layout */
+.hide {
+    position: absolute;
+    top: -500px;
+    left: -500px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+body {
+    background: #333 url(images/bg-space-tile.gif) top center fixed repeat-x;
+    text-align: center;
+}
+
+#rocket {
+    position: absolute;
+    top: 269px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: url(images/rocket.gif) top center no-repeat;
+    z-index: 1;
+}
+
+#Earth {
+    background: url(images/bg-earth.gif) top center fixed no-repeat;
+}
+
+#moonHorizon {
+    position: relative;
+    z-index: 2;
+    background: url(images/bg-moon-fixed.gif) bottom center fixed repeat-x;
+}
+
+#navContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0; /* Height must be zero or fixed div will overlap our content area */
+    z-index: 900; /* to prevent padding from #footerCenter overlapping #navContainer */
+}
+
+#navCenter {
+    margin: 0 auto;
+    width: 808px;
+    padding: 0 24px;
+    height: 0; /* Height must be zero or fixed div will overlap our content area */
+}
+
+#nav {
+    float: left; /* IE7 needs this */
+    padding: 48px 0 24px 0;
+    width: 184px;
+    text-align: right;
+}
+
+#nav ul {
+    background: url(images/black-o50.png);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 24px 0 24px 0;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+}
+
+#nav li {
+    /*height: 24px; /* IE 7 will add this weird 1px gutter around the li if font-size/line-height (2em = 24px) and height (24px) are both set */
+}
+
+#nav li a {
+    display: block;
+    /*height: 24px; /* IE 7 will add this weird 1px gutter around the a if font-size/line-height (2em = 24px) and height (24px) are both set */
+    padding: 0 24px;
+}
+
+#nav li a.current {
+    color: #ccc;
+    background: url(images/bg-arrow-nav.gif) top left no-repeat;
+}
+
+#nav li a:hover {
+    background: url(images/bg-arrow-nav.gif) top right no-repeat;
+}
+
+#nav li a.more:hover {
+    background: url(images/bg-arrow-nav.gif) top center no-repeat;
+}
+
+#search {
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    text-align: right;
+    width: 135px;
+    height: 18px;
+    padding: 6px 33px 0 12px;
+    /*margin: 2em 24px 0 0;
+    -moz-border-radius-bottomleft: 12px;
+    -moz-border-radius-topleft: 12px;
+    -webkit-border-bottom-left-radius: 12px;
+    -webkit-border-top-left-radius: 12px;*/
+    border: 1px solid #f0f;
+    height: 16px;
+    margin: 2em 3px 0 0;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+}
+
+#searchButton {
+    position: relative;
+    background: url(images/button-search.gif) top left no-repeat;
+    border: none;
+    width: 24px;
+    height: 24px;
+    top: -24px;
+    font-size: 0;
+    color: #000;
+    /*
+    -moz-border-radius-bottomright: 12px;
+    -moz-border-radius-topright: 12px;
+    -webkit-border-bottom-right-radius: 12px;
+    -webkit-border-top-right-radius: 12px;
+    */
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+}
+
+#searchButton:hover {
+    background-position: top right;
+}
+
+#contentContainer {
+    padding: 24px 0 0 232px;
+    margin: 0 auto;
+    width: 624px;
+    text-align: left;
+}
+
+#head {
+    width: 600px;
+    height: 48px;
+}
+
+#wordmark {
+    width: 303px;
+    height: 36px;
+    text-indent: -999em;
+    float: left;
+    position: relative;
+    top: -2px;
+}
+
+#wordmark a {
+    background: url(images/head-zachstronaut.gif) top left no-repeat;
+    display: block;
+    height: 100%;
+}
+
+#wordmark a:hover {
+    background-position: right;
+}
+
+#head ul {
+    float: right;
+    text-align: right;
+    width: 184px;
+    margin-bottom: 0;
+}
+
+#head ul a {
+    width: 160px;
+    display: block;
+}
+
+#head a.rss {
+    padding: 12px 24px 0 0;
+    background: url(images/bg-rss-icon.gif) bottom left no-repeat;
+}
+
+#head a.twitter {
+    padding: 0 24px 12px 0;
+    background: url(images/bg-twitter-icon.gif) top left no-repeat;
+}
+
+#head a.rss:hover {
+    background-position: bottom right;
+}
+
+#head a.twitter:hover {
+    background-position: top right;
+}
+
+#content {
+    clear: both;
+}
+
+dl#allTopics {
+    clear: both;
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #ccc;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    padding: 0 12px;
+    height: 22px;
+    margin: 0 24px 24px 0;
+    line-height: 23px;
+}
+
+dl#allTopics dt {
+    padding-left: 0;
+    background: none;
+}
+
+#footer {
+    clear: both;
+    background: url(images/bg-moon-footer.gif) top center repeat-x;
+    padding-top: 144px;
+    margin-top: -2em;
+}
+
+#Moon {
+     width: 1px;
+     height: 1px;
+     position: absolute;
+     top: -324px;
+     left: 0;
+}
+
+#footerExtra {
+    background: #999;
+    padding-bottom: 24px;
+}
+
+#footerCenter {
+    position: relative;
+    z-index: 800; /* to prevent padding from #footerCenter overlapping #navContainer */
+    padding-left: 232px;
+    width: 624px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+ul.elsewhere li a {
+    padding-left: 18px;
+    background: url(images/icons-footer.gif) no-repeat;
+}
+
+ul.elsewhere li a.codepen {
+    background-position: -1088px 1px;
+}
+
+ul.elsewhere li a.dribbble {
+    background-position: -952px 1px;
+}
+
+ul.elsewhere li a.github {
+    background-position: 0 1px;
+}
+
+ul.elsewhere li a.linkedin {
+    background-position: -136px 1px;
+}
+
+ul.elsewhere li a.scribbls {
+    background-position: -272px 1px;
+}
+
+ul.elsewhere li a.shortsix {
+    background-position: -408px 1px;
+}
+
+ul.elsewhere li a.twitter {
+    background-position: -544px 1px;
+}
+
+ul.elsewhere li a.watermelonsauce {
+    background-position: -680px 1px;
+}
+
+ul.elsewhere li a.youtube {
+    background-position: -816px 1px;
+}
+
+ul.comments li {
+    padding-left: 18px;
+    background: url(images/icon-comment-footer.gif) 0 6px no-repeat;
+}
+
+ul.tweets {
+    overflow: hidden;
+}
+
+ul.tweets li {
+    padding-left: 18px;
+    background: url(images/icon-tweet-footer.gif) 0 6px no-repeat;
+}
+
+dl.topics dt {
+    float: left;
+    background: url(images/bg-circle-bullet.gif) center left no-repeat;
+    padding-left: 14px;
+}
+
+dl.topics dd {
+    float: left;
+}
+
+.commentsLink {
+    margin-top: -2em;
+}
+
+.post {
+    clear: both;
+    margin-bottom: 2em;
+}
+
+.post.single {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+hr {
+    border-bottom: 1px dotted #666;
+    margin-right: 24px;
+}
+
+/* These rules are why the half/third classes do not account for the gutter */
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.content p,
+.content ol,
+.content ul,
+#footer p {
+    padding-right: 24px;
+}
+
+.content pre {
+    margin-right: 24px;
+}
+
+.content div.inset {
+    margin-right: 24px;
+    margin-bottom: 2em;
+}
+
+.content table {
+    width: 600px;
+    border: 0;
+    margin: 0 24px 2em 0;
+}
+
+/*.content ul.pagination,*/
+ul.pagination {
+    height: 2em;
+    margin: 0 0 2em 0;
+    padding: 0;
+}
+
+ul.pagination li {
+    float: left;
+    list-style: none;
+    height: 22px;
+    padding: 0 1ex 24px 0;
+    margin: 0;
+    line-height: 23px;
+}
+
+ul.pagination li.current span,
+ul.pagination li a {
+    display: block;
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #ccc;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    padding: 0 12px;
+    height: 22px;
+    line-height: 23px;
+}
+
+ul.pagination li.current span {
+    color: #ccc;
+}
+
+ul.pagination li a:hover {
+    border: 1px solid #0f0;
+}
+
+.formy input {
+    float: left;
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #f0f;
+    height: 16px;
+    width: 160px;
+    padding: 6px 12px 0 36px;
+    margin-bottom: 2em;
+    position: relative;
+    left: -24px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.formy .invalid input {
+    border-color: #f00;
+    color: #f00;
+}
+
+.formy input.button {
+    float: right;
+    margin-right: 24px;
+    left: 0;
+    width: 102px;
+    height: 24px;
+    background: #f0f;
+    border: none;
+    padding: 0 12px;
+}
+
+.formy input.button:hover,
+.formy input.button:active {
+    background: #0f0;
+}
+
+.formy label {
+    position: relative;
+    clear: left;
+    float: left;
+    background: #f0f;
+    height: 24px;
+    width: 78px;
+    padding: 0 12px;
+    margin-bottom: 2em;
+    line-height: 24px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    z-index: 2;
+}
+
+.formy .invalid label {
+    background: #f00;
+}
+
+.formy label span {
+    display: block;
+    position: relative;
+    width: 162px;
+    left: 102px;
+    top: -3px;
+}
+
+.formy label.long {
+    float: none;
+    display: block;
+    width: 264px;
+    position: relative;
+}
+
+.formy label.long span {
+    position: absolute;
+    display: inline;
+    width: auto;
+    top: 0;
+}
+
+.formy textarea {
+    width: 262px;
+    height: 168px;
+    background: transparent;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    padding: 0 0 0 12px;
+    resize: none;
+}
+
+.formy div.textarea {
+    position: relative;
+    top: -4em;
+    width: 286px;
+    height: 180px;
+    border: 1px solid #f0f;
+    padding-top: 23px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+    margin-bottom: -2em; /* because top is relative offset negative */
+}
+
+.formy .invalid textarea {
+    color: #f00;
+}
+
+.formy .invalid div.textarea {
+    border-color: #f00;
+}
+
+.formy div.email
+{
+    display: none;
+}
+
+.full {
+    float: left;
+    width: 624px;
+}
+
+.half {
+    float: left;
+    width: 312px;
+}
+
+.twoThirds {
+    float: left;
+    width: 416px;
+}
+
+.third {
+    float: left;
+    width: 208px;
+}
+
+/* really, the right padding here only makes sense for img.right (though I have some a.right's) ... and really I could just give right padding to .content img just like I do for .content p, etc. */
+.right {
+    float: right;
+    padding: 0 24px 24px 24px;
+}
+
+.third.right {
+    padding-right: 0;
+}
+
+.left {
+    float: left;
+    padding: 0 24px 24px 0;
+}
+
+.project-toc {
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    margin-right: 24px;
+    margin-bottom: 2em;
+    padding: 24px 0 0 24px;
+}
+
+.project-toc .half {
+    width: 288px;
+}
+
+.clearFloats {
+    clear: both;
+}
+
+.padding {
+    margin-right: 24px;
+    margin-bottom: 2em;
+    padding: 24px;
+}
+
+.padding * {
+    padding-right: 0;
+    margin-bottom: 0;
+}
+
+.padding ul + p {
+    margin-top: 2em;
+}
+
+#footer .padding {
+    background: #666 url(images/bg-footer-tile.gif) top left repeat-x;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+}
+
+#footer .padding.author {
+    background: #333 url(images/bg-footer-author-tile.gif) top left repeat-x;
+    color: #fff;
+}
+
+.commentHeader {
+    background: url(images/icon-comment-footer.gif) center left no-repeat;
+    padding-left: 18px;
+    margin-bottom: 0;
+}
+
+.padding.error,
+#footer .padding.error {
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    background: #f00;
+    color: #000;
+}
+
+.padding.error ul {
+    list-style-type: disc;
+    margin-left: 1.5em;
+}
+
+.padding.success,
+#footer .padding.success {
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    background: #0f0;
+    color: #000;
+}
+
+ul.postList li p {
+    margin-bottom: 0;
+}
+
+table.documentation {
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+table.documentation tr.row1 {
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+table.documentation th {
+    color: #fff;
+    background: rgb(102, 102, 102);
+    background: rgba(102, 102, 102, 0.5);
+    font-weight: bold;
+    padding: 0 24px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+}
+
+table.documentation td {
+    padding: 0 24px;
+}
+
+table.documentation td strong {
+    font-family: Monaco, monospace;
+}

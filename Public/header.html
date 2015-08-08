@@ -1,0 +1,43 @@
+    <!--导航条部分-->
+    <!-- Fixed navbar -->
+    <div id="bar1">
+      <div class="badge">您好，欢迎来到呆萌！</div> 
+      <?php 
+      if($_SESSION["user_id"])
+      {
+        echo "<a href=''>".$_SESSION["username"]."</a>";
+        echo "<a href='###'  class='_exit'>退出</a>";
+      }
+      else {
+        echo   "<a href=".U('Index/Login/','','')." class='_login' target='_blank'>登陆</a>";
+        echo   "<a href=".U('Index/register/','','')." target='_blank'>[免费注册]</a>";
+          }
+      ?>  
+  <a href="{:U('index/help/help123.html','','')}">帮助中心</a>
+    </div>
+    <div id="head_">
+      <ul >
+        <li style="margin-left:80px;"><a href="__ROOT__"><img src="__PUBLIC__/res/images/top_pic/logo.png" style="width:120px;"></a></li>
+        <li><a class="active_" style=" text-decoration: none;" href="__ROOT__">首页</a></li>
+        <li><a class="active_" style=" text-decoration: none;"href="{:U('index/items','','')}">浏览项目</a></li>
+        <li><a class="active_" style=" text-decoration: none;"href="{:U('index/startitem','','')}">发起项目</a></li>
+        <li><a class="active_" style=" text-decoration: none;"href="{:U('index/publicplatform','','')}">公众平台</a></li>
+        <li><a class="active_" style=" text-decoration: none;"href="{:U('index/community','','')}">呆萌社区</a></li>
+        <li>
+          <form action="###" method="post" >
+            <input class="search_content" type="text" placeholder="Search" />
+            <input class="search_sub" type="submit" style="color:#fff" value="搜索" />
+          </form>
+        </li>
+        <li    style="margin-left:60px;">
+          <ul id="hid"style="display:inline;">
+            <li class="menus" style="display:block;">  
+            <img src="__PUBLIC__/res/images/small_pic/person.png"><a  style=" text-decoration: none;color:#a7ce37;" href="javascript:void(0)" >个人中心</a>
+            </li>
+            <li style="display:none;margin:5px 0px 5px 20px;color:#a7ce37"><a href="{:U('index/personalPage/myCrowdfunding','','')}">我的众筹</a></li>
+            <li style="display:none;margin:5px 0px 5px 20px;color:#a7ce37"><a href="{:U('index/personalPage/newscenter','','')}">消息中心</a></li>
+            <li style="display:none;margin:5px 0px 5px 20px;color:#a7ce37"><a href="{:U('index/personalPage','','')}">个人信息</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>

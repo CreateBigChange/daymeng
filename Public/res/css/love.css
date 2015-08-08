@@ -1,0 +1,156 @@
+body
+{
+	padding:0px;
+	font-family:宋体,微软雅黑,Arial,Verdana,arial,serif;
+}
+.button_pic
+{
+
+}
+.head
+{
+	width:100%;
+	height:150px;
+	padding:0px;
+
+}
+.head_img
+{
+	float:left;
+	margin-left:10px;
+	margin-top:10px;
+	
+}
+.head_content
+{
+	float:left;
+	font-size:24px;
+	margin-top:-30px;
+	
+}
+.mid
+{
+	width:80%;
+	
+	margin-left: auto;
+	margin-right: auto;
+
+}
+.mid_title
+{
+	color:#ADE318;
+	font-size:36px;
+	width:100%;
+}
+.head .head_img img
+{
+	width:100px;
+}
+.compare .title
+{
+	text-align:left;
+	font-size:24px;
+}
+.compare .content
+{
+	width:100%;
+}
+.compare .content .left
+{
+	width:45%;
+	float:left;
+	border-top:1px green solid;
+}
+.compare .content .right
+{
+	width:45%;
+	float:right;
+	border-top:1px green solid;
+}
+.info
+{
+	float:right;
+	width:50%;
+	margin-top:40px;
+}
+.left_img
+{
+	float:left;
+	width:40%;
+	margin-top:-20px;
+}
+.button
+{
+
+}
+.person
+{
+	width:100%;
+	float:left;
+}
+.person .title
+{
+	text-align:left;
+	font-size:24px;
+}
+.person .content
+{
+	width:100%;
+}
+.content .top .left
+{
+	width:45%;
+}
+.content .top .right
+{
+	width:45%;
+}
+.main2
+{
+	width:100%;
+	float:left;
+}
+.button
+{
+	float:left;
+	width:100%;
+	
+}
+.content .button .left
+{
+	width:45%;
+}
+.button .main1
+{
+	
+}
+.person .content .button .right
+{
+	width:45%;
+}
+.move_left
+{
+	
+	width:36px;
+	height:56px;
+	position: fixed;
+	top:300px;
+	left:90px;
+	background:url(../direction.png);
+	background-position: 0 -112px;
+	
+	background-repeat: no-repeat;
+}
+
+.move_right
+{	
+		
+		width:36px;
+		height:56px;
+		right:90px;
+		top:300px;
+		position: fixed;
+		background:url(../direction.png);
+		background-repeat: no-repeat;
+		background-position: 3px -168px;
+}

@@ -1,0 +1,18 @@
+#repay_id
+{
+	border:1px red solid;
+	width:150px;
+	height:150px;
+	position:fixed;
+	right:2px;
+	top:100px;
+}
+#address
+{
+	border:1px red solid;
+	width:150px;
+	height:150px;
+	position:fixed;
+	right:2px;
+	top:250px;
+}

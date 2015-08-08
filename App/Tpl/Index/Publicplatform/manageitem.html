@@ -1,0 +1,236 @@
+<HTML>
+<HEAD>
+	<META content="IE=11.0000" http-equiv="X-UA-Compatible">		 
+	<META charset="utf-8"> 
+   <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+	<META http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<TITLE>项目管理</TITLE>  
+	<LINK href="__PUBLIC__/res/css/layout.css" rel="stylesheet" type="text/css"> 
+	<LINK href="__PUBLIC__/res/css/base.css" rel="stylesheet" type="text/css"> 
+	<LINK href="__PUBLIC__/res/css/lib.css" rel="stylesheet" type="text/css">        
+	<LINK href="__PUBLIC__/res/css/page_index.css" rel="stylesheet">  
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/manageUser.css">  
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/platform.css">   
+
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/modal/css/component.css" />
+	<script src="__PUBLIC__/modal/js/modernizr.custom.js"></script>
+
+	<!--模态框-->
+	<div class="md-modal md-effect-1" id="modal-1">
+    <div class="md-content">
+        <h3>系统消息</h3>
+        <div>
+            <p>具体情况将通过系统消息发送给您</p>
+            <button class="md-close">关闭</button>
+        </div>
+    </div>
+	</div>
+	
+	<div class="md-overlay"></div><!-- the overlay element -->
+
+<!--/模态框-->
+	     
+</HEAD>     
+<BODY class="zh_CN">
+		<DIV class="head" id="header">
+				<DIV class="head_box">
+				<div class="bg-top">
+				<!-- <img src="__PUBLIC__/res/images/login/bg-top.png">  -->
+			</div>
+						<DIV class="inner wrp">
+						<H1 class="logo"><A title="公众平台" href="{:U('/index')}"></A></H1>
+								<DIV class="account">
+										<DIV class="account_meta account_info">
+												<A class="nickname" href="{:U('/mp/set')}">{$nickname}</A> 
+												<A href="{:U('/my')}">
+							                     <IMG 
+												class="avatar" src="__PUBLIC__/res/images/person_img/{$img}"></A>                            
+										 </DIV>
+
+									<DIV class="account_meta account_logout">
+										<A id="logout" href="{:U('index/Publicplatform/logOut')}">退出</A>
+									</DIV>
+								</DIV>
+						</DIV>
+				</DIV>
+		</DIV>
+<DIV class="body page_index" id="body">
+	<DIV class="container_box cell_layout side_l" id="js_container_box">
+			<DIV class="col_side">
+					<DIV class="menu_box" id="menuBar">
+							<DL class="menu no_extra">
+									  <DT class="menu_title">
+											功能 				
+										</DT>
+									  <DD class="menu_item ">
+											<A href="{:U('/mp/msg','','')}">群发功能</A>
+									  </DD>
+									  <DD class="menu_item "><A href="{:U('/mp/news','','')}">消息回复</A>
+									  </DD>
+							  </DL>
+							<DL class="menu ">
+									  <DT class="menu_title">管理 
+									</DT>
+
+										<DD class="menu_item "><A href="javascript:;">项目管理</A></DD>	
+									
+									  <DD class="menu_item "><A href="{:U('/mp/product','','')}">发货管理</A></DD>
+									  
+									  <DD class="menu_item "><A href="{:U('/mp/user','','')}">用户管理</A></DD>
+									  
+							  </DL>
+
+							  	<DL class="menu ">
+									  <DT class="menu_title">设置 
+									</DT>
+									
+									  <DD class="menu_item "><A href="{:U('/mp/set','','')}">公众号设置</A>
+									  </DD>
+									  
+							  </DL>
+				
+					  </DIV>
+			  </DIV>
+
+
+			  <div class="col_main">
+                    
+					<div class="main_hd">
+					    <h2 style="line-height: 30px;">项目管理</h2>
+					</div>
+					<div class="main_bd">
+
+					    <div class="mod_hd">
+					        <div class="mod_info"> 
+		
+					        </div>
+					    </div>
+					    <div class="inner_container_box side_r cell_layout">
+					        <div class="inner_main">
+					            <div class="bd">
+					                
+											
+												<div class="ads-list">
+													<table>
+												<colgroup>
+													<col width="15%">
+													<col width="20%">
+													<col width="15%">
+													<col width="15%">
+													<col width="10%">
+													<col width="10%">
+													<col width="15%">													
+												</colgroup>
+													<thead>
+														<tr>
+															<th>图片</th>
+															<td>项目名称</td>
+															<td>发布日期</td>
+															<td>截止日期</td>
+															<td>目标</td>
+															<td>进度</td>
+															<td>状态</td>
+														</tr>
+													</thead>
+																
+												<tbody id="userinfo">
+
+												<volist name="item" id="vo">
+									<tr>
+
+										
+										<th><img style="width:50px;height:50px;" src="__PUBLIC__/\Uploads/\items/\{$vo.img}"></th>
+
+										<eq name="vo.item_check" value="1">
+											<eq name="vo.success" value="0">
+												<td><a class="green Js-addr-modify" href="{:U('/detail/'.$vo['id'],'','')}" target="_blank">&nbsp;{$vo.title}</a></td>	
+											<else/>
+												<td>{$vo.title}</td>
+											</eq>
+										<else/>
+											<td>{$vo.title}</td>
+										</eq>
+
+										<td>{$vo.begin_time}</td>
+										<td>{$vo.end_time}</td>
+										<td>{$vo.money}</td>
+										<td>{$vo.gain}元 {$vo.precent}%</td>
+										<eq name="vo.item_check" value="1">
+										
+											<eq name="vo.success" value="1">
+												<td data-id="57264">已完结<a class="green Js-addr-modify" href="{:U('index/detail/index?item_id='.$vo['id'],'','')}" style="cusor:pointer;">&nbsp;详情</a></br>
+												</td>
+											<else/>
+												<td data-id="57264">众筹中<a class="green Js-addr-modify" href="{:U('index/detail/index?item_id='.$vo['id'],'','')}" tyle="cusor:pointer;">&nbsp;详情</a></br>
+												</td>
+											</eq>
+										</eq>
+
+										<eq name="vo.item_check" value="0">
+											<td data-id="57264">审核中
+												<a class="green Js-addr-modify md-trigger" data-modal="modal-1" tyle="cusor:pointer;">详情</a>
+											</a></br>
+											</td>
+										</eq>
+
+										<eq name="vo.item_check" value="2">
+											<td data-id="57264">未通过
+				<!--模态框-->					<a class="green Js-addr-modify md-trigger" data-modal="modal-1">详情</a>
+											</a></br>
+
+											</td>
+										</eq>
+
+										<eq name="vo.item_check" value="3">
+											<td data-id="57264">预热中
+												<a class="green Js-addr-modify md-trigger" href="{:U('index/detail/index?item_id='.$vo['id'],'','')}" tyle="cusor:pointer;">详情</a>
+											</a></br>
+											</td>
+										</eq>
+										<eq name="vo.item_check" value="4">
+											<td data-id="57264">众筹中
+												<a class="green Js-addr-modify md-trigger" href="{:U('index/detail/index?item_id='.$vo['id'],'','')}" style="cusor:pointer;">详情</a>
+											</a></br>
+											</td>
+										</eq>
+									</tr>
+								</volist>
+												</tbody>
+						
+												</table>
+											</div>
+										
+					              </div>
+					        </div>
+					    </div>
+					</div>
+                </div>
+	 </DIV>
+	<DIV class="faq">
+		<UL class="links">
+		  <LI class="links_item no_extra"><A href="http://wpa.qq.com/msgrd?v=3&uin=3143239359&site=qq&menu=yes" 
+		  target="_blank">在线客服</A></LI>
+		  <LI class="links_item"><A href="http://wpa.qq.com/msgrd?v=3&uin=521187146&site=qq&menu=yes" 
+		  target="_blank">客服中心</A></LI></UL>
+	</DIV>
+</DIV>
+
+
+<include file="Publicmodel:person_footer" />  
+	<script type="text/javascript">
+	var getuser="{:U('index/Publicplatform/getuser')}";
+	var sendurl="{:U('index/Publicplatform/sendproduct')}";
+	</script>
+    <script type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/res/js/publicPlatform.js"></script>    
+	<!-- 模态框  -->
+			<div class="md-overlay"></div><!-- the overlay element -->
+		<script src="__PUBLIC__/modal/js/classie.js"></script>
+		<script src="__PUBLIC__/modal/js/modalEffects.js"></script>
+		<script>
+			var polyfilter_scriptpath = '/js/';
+		</script>
+		<script src="__PUBLIC__/modal/js/cssParser.js"></script>
+		<script src="__PUBLIC__/modal/js/css-filters-polyfill.js"></script>
+
+             </BODY></HTML>

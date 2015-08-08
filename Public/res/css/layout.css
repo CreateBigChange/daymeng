@@ -1,0 +1,133 @@
+﻿
+.account {
+	padding-top: 10px; font-size: 0px; float: right;
+}
+.account a {
+	color: rgb(34, 34, 34);
+}
+.account a:hover {
+	color: rgb(69, 154, 233);
+}
+.account a.account_primary_link {
+	color: rgb(69, 154, 233);
+}
+.account_meta {
+	font-size: 14px; vertical-align: bottom; display: inline-block;
+}
+.account_info {
+	margin-right: 8px; position: relative; min-width: 80px;
+}
+.account_info .avatar {
+	left: -50px; top: 0px; width: 38px; height: 38px; position: absolute; background-color: rgb(240, 240, 240);
+}
+.account_info .type_wrp {
+	left: 0px; top: 2px; position: absolute;
+}
+.account_info .type_wrp .type {
+	vertical-align: top;
+}
+.account_info .nickname {
+	font-style: normal; font-weight: 400; margin-top: 18px; display: inline-block;
+}
+.account_inbox {
+	top: 2px; font-size: 11px; position: relative; z-index: 1;
+}
+.account_inbox .icon_inbox {
+	margin-left: 3px;
+}
+.account_inbox .icon_dot_notices {
+	margin-top: -14px; margin-left: -10px;
+}
+.on.account_inbox .account_inbox_switch {
+	border-color: rgb(217, 218, 220); position: relative; z-index: 1; background-color: rgb(255, 255, 255);
+}
+.account_inbox_switch {
+	border-width: 1px 1px 0px; border-style: solid; border-color: transparent; border-image: none; width: 35px; height: 28px; text-align: center; line-height: 28px; display: block;
+}
+.account_inbox_switch:hover {
+	text-decoration: none;
+}
+.account_inbox_switch i.icon_common {
+	margin-top: 16px; vertical-align: top; cursor: pointer;
+}
+.account_inbox_switch i.inbox {
+	
+}
+.account_inbox_switch i.notices {
+	margin-left: -12px;
+}
+.account_message_box {
+	padding: 16px 0px; border: 1px solid rgb(217, 218, 220); border-image: none; top: 100%; right: 0px; margin-top: -1px; position: absolute; background-color: rgb(255, 255, 255);
+}
+.account_message_box ul {
+	width: 190px;
+}
+.account_message_box li {
+	min-height: 32px;
+}
+.account_message_link {
+	line-height: 32px; padding-left: 18px; display: block; position: relative;
+}
+.account_message_link strong {
+	width: auto; overflow: hidden; font-style: normal; font-weight: 400; margin-right: 18px; display: block; white-space: nowrap; cursor: pointer; -ms-word-wrap: normal; -ms-text-overflow: ellipsis;
+}
+.account_message_link .read_more {
+	top: 0px; right: 1em; color: rgb(69, 154, 233); position: absolute; cursor: pointer;
+}
+.account_message_link:hover {
+	text-decoration: none; background-color: rgb(238, 238, 238);
+}
+.account .account_message_link {
+	color: rgb(141, 141, 141);
+}
+.btn_inbox_closed.btn {
+	border-color: rgb(230, 231, 236); margin: 10px 18px 0px; width: auto; height: 30px; color: rgb(34, 34, 34); line-height: 30px; padding-right: 0px; padding-left: 0px; font-size: 11px; display: block; background-image: linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 100%); background-color: rgb(255, 255, 255);
+}
+.btn_inbox_closed.btn button {
+	color: rgb(34, 34, 34);
+}
+.btn_inbox_closed.btn:hover {
+	border-color: rgb(218, 219, 224); color: rgb(0, 0, 0); box-shadow: none; background-image: linear-gradient(rgb(230, 231, 236) 0px, rgb(230, 231, 236) 100%); background-color: rgb(230, 231, 236); -moz-box-shadow: none; -webkit-box-shadow: none;
+}
+.btn_inbox_closed.btn:hover button {
+	color: rgb(34, 34, 34);
+}
+.btn_inbox_closed.btn:hover {
+	color: rgb(34, 34, 34);
+}
+.account_logout a {
+	line-height: 16px; padding-left: 14px; margin-top: 18px; margin-left: 5px; border-left-color: rgb(231, 231, 235); border-left-width: 1px; border-left-style: solid; display: inline-block;
+}
+.account_faq {
+	padding-top: 18px;
+}
+.account_faq a {
+	display: inline-block;
+}
+.logo {
+	padding-top: 10px; font-size: 24px; float: left;
+}
+.logo a {
+	width: 248px; height: 40px; overflow: hidden; text-decoration: none; display: block;
+}
+.logo a::before {
+	display: inline-block; content: url('../images/small_pic/small_logo.png');
+}
+.head .inner {
+	height: 60px;
+}
+.head .inner::after {
+	height: 0px; clear: both; display: block; content: "\200B";
+}
+.head .wrp.inner {
+	width: 1200px; margin-right: auto; margin-left: auto;
+}
+.bg-top{
+	background-image:url(../images/login/bg-top.png); 
+	height: 10px;
+	width: 100%；
+}
+.head_box {
+	border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(217, 218, 220); border-top-width: 0px; border-bottom-width: 1px; border-bottom-style: solid; position: relative; background-color: rgb(255, 255, 255);
+}
+

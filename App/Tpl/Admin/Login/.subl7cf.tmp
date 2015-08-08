@@ -1,0 +1,6 @@
+<html>
+<frameset  rows="10%,*">
+<frame  src="menu.html"  scrolling="yes" noresize="noresize" frameborder="0">
+<frame  src="main.html"  scrolling="yes" noresize="noresize">
+</frameset>
+</html>

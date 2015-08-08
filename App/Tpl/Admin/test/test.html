@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8 " >
+
+</head>
+<body>
+<form action="#" method="post" enctype="multipart/form-data">
+<input class="image_upload" type="file" name="pic[]" >
+<input class="image_upload" type="file" name="pic[]" >
+<input class="sdas" type="text" name="aaa" value="111" >
+<div class="append_to"></div>
+<input type="submit" name="sub_images" value="upload">
+</form>
+<script type="text/javascript" src="./jquery.js"></script>
+
+<?php
+$file_path="./upload/";//文件上传路径
+$image_type=array(".jpg");//文件类型
+if($_POST["sub_images"]=="upload"){
+if(!file_exists($file_path)){
+	mkdir($file_path);
+}
+foreach ($_FILES["pic"]["error"] as $key => $error) { 
+	  if ($error == UPLOAD_ERR_OK) { 
+	  	if($_FILES["pic"]["size"][$key]>2046*1000||$_FILES["pic"]["size"][$key]<10*1000){
+	  		echo $_FILES["pic"]["size"][$key]."<br>";
+	  		echo "文件大小不合适";
+	  		return 0;
+	  	}
+	  	echo "=".$_POST["aaa"]."<br>";
+	  	//系统中暂时存储的文件名
+	  	$tmp_name=$_FILES["pic"]["tmp_name"][$key];
+	  	//实际的文件名
+	  	$name=$_FILES["pic"]["name"][$key];
+		//文件后缀名
+	  	$post_fix=substr($name, strrpos($name, ".")) ;//文件后缀名
+	  	if(!in_array($post_fix,$image_type)){//后缀名不正确
+	  		echo "文件格式不正确";
+	  		exit();
+	  	}
+	  	//存储到数据库中的文件名
+	  	$last_name=$key.$post_fix;
+	  	//上传之后的文件路径和名称
+	  	$upload_file_name=$file_path.$last_name;
+	  	if(move_uploaded_file($tmp_name, $upload_file_name)){
+	  	echo $upload_file_name."上传成功<br>";	  		
+	  	}
+	  	else{
+	  	echo $upload_file_name."上传失败<br>";
+
+	  	}
+}
+}
+}
+?>
+<script type="text/javascript">
+		$(".image_upload").click(
+			function(){
+				$("<input class='image_upload' type='file' name='pic[]' >").appendTo(".append_to");
+				}
+			);
+</script>
+</body>
+</html>

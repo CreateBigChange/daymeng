@@ -1,0 +1,78 @@
+.next_sub{
+	border: 0px;
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+	width: 100px;
+	line-height: 30px;
+	height: 35px;
+	width: 90px;
+	background-color: #a7ce37;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-bor-border-radius: 5px;
+	cursor: pointer;
+	margin: 0px;
+	margin-left: 800px;
+	position: relative;
+	display: block;
+}
+td{
+	padding: 10px;
+	font-size: 13px;
+}
+.next_border{
+	border-bottom: 1px dashed #a7ce37;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+.items_info_title{
+	background: #a7ce37;
+	color: #444;
+}
+.next_info{
+	font-size: 12px;
+
+}
+.next_weight{
+font-size: 12px;
+color: 333;
+font-weight: bold;
+}
+.next_content div{
+	margin: 20px 10px;
+}
+.next_content{
+	font-size: 14px;
+	padding: 20px 40px;
+	height: 530px;
+	background-color: #fff;
+}
+.next_title{
+	height: 70px;
+	font-size: 24px;
+	color: #444;
+	border-bottom: 1px solid #dedbdb;
+	background-color: #fafafa;
+}
+.next_support{
+	height:550px;
+	background-color: #f3f3f3;
+	width: 1000px;
+	margin: 20px auto; 
+	border: 1px solid #dedbdb;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-family: 'Microsoft Yahei','\5FAE\8F6F\96C5\9ED1',Arial,'Hiragino Sans GB','\5B8B\4F53';
+    color: #666;
+}
+#repay_id
+{
+	border:1px red solid;
+	width:50px;
+	height:50px;
+	position:absolute;
+	right:2px;
+	top:50px;
+}

@@ -1,0 +1,555 @@
+body{
+    width: 100%;height: 100%;
+  }
+  /*阴影框*/
+  #black{
+    width: 100%;height: 100%;display: none;background-color: #000;position: fixed;top: 0px;left: 0px;opacity: 0.5;filter:alpha(opacity=50);z-index: 10;
+  }
+  /*整体居中*/
+  #modal{
+    position: absolute;top: 0px;left: 50%;margin-left: -540px; height: 600px;width: 1080px;z-index: 15;
+  }
+  /*模态狂*/
+  .step{
+    position: absolute;top: 100px;left: 240px;height: 380px;width: 600px;
+  }
+  .step a{
+    position: absolute;
+    text-indent:-9999px;overflow: hidden;cursor: pointer;
+  }
+  .step span{
+    position: absolute;
+    text-indent:-9999px;overflow: hidden;cursor: pointer;
+  }
+  #stepa{
+    background:url(../images/love/public/step1.png);display: none;
+  }
+  #stepa a{
+    width: 120px;height: 120px;left: 500px;top: 0px;
+  }
+  #stepa span{
+    width: 100px;height: 100px;top: 320px;left: 530px;
+  }
+  #stepb{
+    background:url(../images/love/public/step2.png);display: none;
+  }
+  #stepb a{
+    width: 120px;height: 120px;left: 500px;top: 0px;
+  }
+  #stepb span{
+     width: 100px;height: 100px;top: 320px;left: 530px;
+  }
+
+/*引导页css结束*/
+
+/*global css */
+html {
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+body{
+    background: url("../img/twill_bg.png") repeat;
+    font-family: Microsoft YaHei,"微软雅黑",sans-serif;
+    color: #222222;
+    background-color: #ffffff;
+}
+.logo{
+    float: left;
+}
+.button{
+    float: right;
+}
+/* common css */
+.wrapper {
+    width:1040px;
+}
+
+.wrapper .main-title {
+    color: #646878;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    padding-top: 66px;
+    margin: 0
+}
+
+.wrapper .main-description {
+    color: #909090;
+    line-height: 3;
+    text-align: center;
+    margin-bottom: 0
+}
+
+.wrapper .main-mb {
+    margin-bottom: 50px
+}
+
+.wrapper .dividing {
+    position: relative;
+    height: 38px;
+    margin-top: 25px;
+    margin-bottom: 50px
+}
+
+.wrapper .dividing .btn {
+    margin: 0 auto;
+    position: relative;
+    z-index: 1
+}
+
+.wrapper .dividing:before {
+    content: '';
+    border-top: 4px solid #e0e0e0;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    z-index: 0
+}
+
+.project-title {
+    position: relative;
+    font-size: 16px;
+    color: #646878;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+.project-title span {
+    position: relative;
+    background: #fff;
+    padding: 0 12px;
+    display: inline-block;
+    color: #646878;
+    font-size: 20px
+}
+.intro{
+    display: block;
+    height: 120px;
+}
+.web{
+
+}
+.project-title:before {
+    content: '';
+    width: 100%;
+    border-top: 1px solid #e0e0e0;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: 0
+}
+
+
+
+/* project list css */
+.project-card > div.wrapper {
+    overflow: hidden
+}
+
+.project-card .project-more {
+    text-align: center;
+    margin-bottom: 50px;
+   
+}
+.project-card {
+    padding-top: 50px;
+     padding-left: 50px;
+     /*border: 1px solid #E8E8E8;*/
+}
+
+.project-card .project-more a {
+    color: #646878
+}
+
+.project-card .project-more a:hover {
+    color: #6f89e3
+}
+
+.project-card ul.project-card-items {
+    margin: 0 0 50px;
+    padding: 0;
+    margin-right: -70 px\9
+}
+
+.project-card ul.project-card-items li.project-card-add {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    margin-right: 66px;
+    height: 200px;
+    margin-bottom: 20px
+}
+.project-description{
+        position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 260px;
+    padding-left: 10px;
+    margin-right: 0px;
+    height: 150px;
+    margin-bottom: 20px
+}
+.project-description p{
+    font-size: 13px;
+    line-height: 1.8em;
+    color: #606060;
+}
+.project-description b{
+  font-weight: bold;
+    color: #436a28;
+}
+.project-middle{
+        position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 80px;
+    margin-right: 0px;
+    height: 150px;
+    margin-bottom: 20px
+}
+
+.project-card ul.project-card-items li.project-card-add a {
+    position: absolute;
+    display: block;
+    height: 200px;
+    width: 200px;
+    border: 10px solid #ec448d;
+    text-indent: -999px;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: all 0s ease 0s;
+    background: url(../img/krplusv1/raise_repoet_btn.png) no-repeat -11px -10px
+}
+
+.project-card ul.project-card-items li.project-card-add a:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    height: 200px;
+    width: 200px;
+    border: 10px solid #ec448d;
+    overflow: hidden;
+    border-radius: 50%;
+    background: url(../img/krplusv1/raise_repoet_btn.png) no-repeat -10px -356px;
+    transition: all 0.4s ease 0s;
+    opacity: 0;
+    filter: alpha(opacity=0)
+}
+
+.project-card ul.project-card-items li.project-card-add a:hover:before {
+    opacity: 100;
+    filter: alpha(opacity=10000)
+}
+
+.project-card ul.project-card-items li.project-card-item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    margin-right: 0px;
+    margin-bottom: 23px
+}
+
+.project-card ul.project-card-items li.project-card-item:nth-child(3n+0) {
+    margin-right: 0
+}
+
+.project-card ul.project-card-items li.project-card-item .cool {
+    position: relative;
+    height: 200px
+}
+
+.project-card ul.project-card-items li.project-card-item .cool.done .round {
+    color: #fff
+}
+
+.project-card ul.project-card-items li.project-card-item .cool.done .round .pie {
+    border-color: #ec448d
+}
+
+.project-card ul.project-card-items li.project-card-item .cool.done .back {
+    background: #ec448d
+}
+
+.project-card ul.project-card-items li.project-card-item .cool.flip .front {
+    z-index: 5;
+    opacity: 0;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg)
+}
+
+.project-card ul.project-card-items li.project-card-item .cool.flip .back {
+    z-index: 10;
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    transform: rotateY(0deg)
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .last {
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    width: 180px;
+    top: 55px;
+    font-size: 16px
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .item-link {
+    position: absolute;
+    z-index: 30;
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .go {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    margin-left: -30px;
+    background: #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .go img {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    border-bottom: 2px;/*fix*/
+    width: 60px;
+    height: 60px
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 200px;
+    height: 200px;
+    z-index: 8;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all .4s ease 0s;
+    transition: all .4s ease 0s
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .front .box {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 180px;
+    height: 180px;
+    overflow: hidden
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .front .tag {
+    position: absolute;
+    width: 54px;
+    height: 72px;
+    background: url(../img/krplusv1/card_tag.png) no-repeat 0 0;
+    top: -70px;
+    left: 106px;
+    z-index: 30;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .front .tag.show {
+    top: 0
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    padding: 70px 50px;
+    z-index: 6;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background: #ffffff;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-transition: all .4s ease 0s;
+    transition: all .4s ease 0s
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .back .box {
+    display: table-cell;
+    vertical-align: middle;
+    height: 120px;
+    width: 180px
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .back h4,
+.project-card ul.project-card-items li.project-card-item .cool .back .info,
+.project-card ul.project-card-items li.project-card-item .cool .back .introduce
+{
+    font-size: 12px;
+    color: #fff;
+    line-height: 1.6;
+    text-align: center
+}
+
+
+.project-card ul.project-card-items li.project-card-item .cool .back .close {
+    width: 24px;
+    height: 24px;
+    display: block;
+    background: url(../img/krplusv1/raise_card_close.png);
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -12px;
+    opacity: 1;
+    filter: alpha(opacity=100)
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .back .close:hover {
+    -moz-transform: rotate(90deg) !important;
+    -webkit-transform: rotate(90deg) !important;
+    -o-transform: rotate(90deg) !important;
+    transform: rotate(90deg) !important
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .round {
+    position: relative;
+    z-index: 12
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .round:before {
+    content: '';
+    border: 1px solid #e7ecfe;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    display: block
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .round:after {
+    content: '';
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    display: block;
+    top: 10px;
+    left: 10px
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .round .slice {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    clip: rect(0, 140px, 200px, 0)
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .round .pie {
+    position: absolute;
+    border: 3px solid #E7ECFE;
+    width: 200px;
+    height: 200px;
+    clip: rect(0, 200px, 200px, 140px);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .round .slice.gt50 {
+    clip: rect(auto, auto, auto, auto) !important
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .round .fill {
+    -moz-transform: rotate(180deg) !important;
+    -webkit-transform: rotate(180deg) !important;
+    -o-transform: rotate(180deg) !important;
+    transform: rotate(180deg) !important
+}
+
+.project-card ul.project-card-items li.project-card-item .cool .back {
+    background: #7b93e6
+}
+
+.project-card ul.project-card-items li.project-card-item .cool img {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    z-index: 20;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 180px;
+    height: 180px;
+    background: #fff
+}
+
+.project-card ul.project-card-items li.project-card-item .des {
+    text-align: center
+}
+
+.project-card ul.project-card-items li.project-card-item .des a {
+    color: #646878;
+    line-height: 1.4;
+    display: inline-block;
+    margin: 0px 0 5px
+}
+.project-card ul.project-card-items li.project-card-item .des a:hover{
+    /*background-color:#ffccff;   */
+    color:#0080ff;
+}
+/*.weixinimg{
+    background:url(../image/chaoji/weixinma.png) no-repeat 0 0;
+    position:absolute;
+left:0px;
+top:60px;
+}*/
+.weixinimg{
+    /*background:url(../image/chaoji/weixinma.png) no-repeat 0 0;*/
+    position:absolute;
+left:50px;
+top:60px;
+}
+
+.project-card ul.project-card-items li.project-card-item .des .price {
+    color: #646878;
+    font-size: 20px
+}
+
+.project-card ul.project-card-items li.project-card-item .des .price span {
+    font-weight: bold;
+    color: #646878;
+    font-family: 'Oswald'
+}

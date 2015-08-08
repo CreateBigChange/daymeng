@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	   <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/personalPagebase.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/myPage.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/newsCenter.css" />
+	<link rel="stylesheet" href="__PUBLIC__/res/css/jquery-sinaEmotion-2.1.0.min.css"/>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/jquery-sinaEmotion-2.1.0.min.js"></script> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/manageFriends.js"></script>
+		<script>
+			var manageFriends_ajax = '<?php echo U('index/personalPage/manageFriends_ajax','',''); ?>';
+			var manageFriends_send_ajax = '<?php echo U('index/personalPage/manageFriends_send_ajax','',''); ?>';
+		</script>
+	<title>个人中心-好友管理</title>
+</head>
+<include file="Publicmodel:head" />
+<body>
+
+	<!-- 头部 -->
+
+	<!-- 主内容去区-->
+	<div class="main clearfix">
+		<div class="setting wrap">
+			<div class="setting-title clearfix">
+			<h3>个人中心</h3>
+			</div>
+			<div class="setting-content clearfix">
+				<div class="setting-menu">
+					<ul class="clearfix">
+						<li><a class="icons msg ie6fixpic" href="{:U('/my','','')}">信息修改</a></li>
+						<li><a class="icons rec-com ie6fixpic" href="{:U('/password','','')}">密码修改</a></li>
+						<li class="select"><a class="icons rec-com ie6fixpic" href="{:U('/friend','','')}">好友管理</a></li>
+						<li><a class="icons rec-com ie6fixpic" href="{:U('/address','','')}">收货地址管理</a></li>
+						<li><a class="icons rec-com ie6fixpic" href="{:U('/trade','','')}">我的交易信息</a></li>
+					</ul>
+				</div>
+				
+				<div class="setting-detail">
+				<div class="setting-address">
+					<h3 class="green">好友管理</h3>
+					<p>您可以管理您的好友，或者给他们发送私信，修改备注</p>
+					<!--address tab 地址管理列表 static-->
+					<div class="address-tab" id="addr_list" style="display: block; padding-top:50px;">
+<!-- 						<div class="btn-add">
+							<a class="btn-base btn-red-h30 common-sprite" onclick="add_addr()">
+								<span class="common-sprite">添加地址</span>
+							</a>
+						</div> -->
+						<div class="ads-list">
+													<table>
+								<colgroup>
+									<col width="70">
+									<col width="90">
+									<col width="105">
+									<col width="210">
+									<col width="85">
+									<col width="115">
+									
+								</colgroup>
+								<thead>
+									<tr>
+										<th>图片</th>
+										<td>用户名</td>
+										<td>个人说明</td>
+										<td>地址</td>
+										<td>操作</td>
+									</tr>
+								</thead>
+								<tbody>
+								<volist name="person_f" id="vo">
+									<tr>
+										<th><a href="__GROUP__/person/index?id={$vo.friend_id}"><img src="__PUBLIC__/res/images/person_img/{$vo.img} " width="50px" height="50px"></a></th>
+										<td>{$vo.niker}</td>
+									
+										<td>{$vo.person_description}</td>
+										<td>{$vo.address}</td>
+										<td data-id="57264">
+										<a class="green Js-addr-modify send" href="javascript:;">私信</a>
+										<div style="display:none">{$vo.friend_id}</div>
+										<a class="green Js-addr-del del" href="javascript:;">删除</a></td>
+									</tr>
+								</volist>
+								</tbody>
+							</table>
+						</div>
+						
+						
+						
+						
+						
+						
+			<div id="chat" style="float:left;margin-left:100px;margin-top:20px;display:none">			
+			<form class="publish">
+			
+			<textarea class="content form-control" id="content" style="width:500px;height:200px;" placeholder="呆萌，分享更精彩的生活"></textarea><br />
+			<button class="face btn btn-success" type="button" value=""  style="background:#33A600">表情</button>
+			<button class="submit btn btn-success" type="button" value="" style="background:#33A600">传送</button>
+			<button class="btn btn-success close" style="background:#33A600">关闭</button>
+			</form>		
+			</div>			
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					</div>
+				</div>
+				<!--setting address end-->
+			</div>
+
+				
+				
+			</div>
+		</div>
+	</div>
+	<!-- 尾部 -->
+<include file="Publicmodel:person_footer" />
+	
+</body>
+</html>

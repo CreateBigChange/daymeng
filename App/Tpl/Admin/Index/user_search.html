@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body{
+		background-color:#f3f3f3;
+	}
+	.manage_user td{
+		width:300px;
+		max-height: 100px;
+		padding: 5px 3px;
+	}
+	table{
+		border-color: #a7ce37;
+	}
+	td a{
+		margin: 5px 0px;
+	}
+	.pages a{
+		padding: 10px;
+	}
+	.opration a:hover{
+		position: relative;
+		left: -2px;
+		top: -2px;
+	}
+	input{
+		border: 1px solid #a7ce37;
+		border-radius: 3px 3px;
+		-web-kit-border-radius: 3px 3px;
+		-moz-border-radius: 3px 3px;
+	}
+	</style>
+</head>
+<body>
+<table border="1px" cellspacing="0px" style="margin:0px auto;" class="manage_user">
+	<tr >
+	<td colspan="10">	
+		<h2 style="text-align:center">用户一览</h2>	
+	<form action="{:U('admin/index/user_search','','')}"method="post" style="text-align:right">
+	<input type="text" value="" name="search_user" placeholder="请输入用户名或者昵称进行搜索" style="width:200px;height:20px;" />
+	<input type="submit" value="搜索用户"  name="sub_search" style="width:80px;height:25px;"  />
+	</form>
+		</td>
+	</tr>
+	<tr>
+		<td>id</td>
+		<td>账号</td>
+		<td>密码</td>
+		<td>状态</td>
+		<td>昵称</td>
+		<td>最近一次登录时间</td>
+		<td>最近一次登录ip</td>
+		<td>公众号状态</td>
+		<td>邮箱</td>
+		<td>操作</td>
+	</tr>
+	<foreach name="user" item="v">
+		<tr>
+		<td>{$v.id}</td>
+		<td>{$v.username}</td>
+		<td>{$v.password}</td>
+		<td>{$v.lock}</td>
+		<td>{$v.niker}</td>
+		<td>{$v.logintime}</td>
+		<td>{$v.loginip}</td>
+		<td>{$v.public}</td>
+		<td>{$v.email}</td>
+		<td class="opration"><a href="{:U('admin/management/opration','','')}?id={$v.id}&table_name=user&kinds=cancel" style="margin-right:5px;" ><img src="__PUBLIC__/res/images/small/sc.gif" title="冻结"></a><a href="{:U('admin/management/opration','','')}?id={$v.id}&table_name=user&kinds=change" style="margin-left:5px;" ><img src="__PUBLIC__/res/images/small/xg.gif" title="修改"></a>
+		</td>
+	</tr>
+	</foreach>
+	<tr>
+	<td colspan="10" style="text-align:center;" class="pages">{$page}
+	</td>
+	</tr>
+
+</table>
+</body>
+</html>
+<!--

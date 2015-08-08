@@ -1,0 +1,200 @@
+body
+{
+	padding:0px;
+	font-family:宋体,微软雅黑,Arial,Verdana,arial,serif;
+	color:#003300;
+	letter-spacing:1px;
+	font-size:14px;
+	background:red;
+}
+.body
+{
+	background:#F7F3F7;
+}
+.head
+{
+	width:100%;
+	height:150px;
+	padding:0px;
+	background:url(/wish/Public/res/images/angle/head.jpg);	
+
+}
+.head_img
+{
+	float:left;
+	margin-left:600px;
+	margin-top:10px;
+}
+.logo
+{
+	position:absolute;
+	top:50px;
+	left:50px;
+}
+.head_content
+{
+	float:left;
+	font-size:24px;
+	margin-top:30px;
+	
+	
+}
+.mid
+{
+	width:80%;
+	height:1400px;
+	margin-left: auto;
+	margin-right: auto;
+	background:#ffffff;
+	margin-top:30px;
+}
+.mid_title
+{
+	color:#ADE318;
+	font-size:36px;
+	width:100%;
+}
+.head .head_img img
+{
+	width:100px;
+}
+.compare .title
+{
+	text-align:left;
+	font-size:24px;
+}
+.compare .content
+{
+	width:100%;
+}
+.compare .content .left
+{
+	width:45%;
+	float:left;
+
+}
+.compare .content .right
+{
+	width:45%;
+	float:right;
+
+}
+.info
+{
+	float:right;
+	width:50%;
+	margin-top:40px;
+}
+.left_img
+{
+	float:left;
+	width:40%;
+	margin-top:-20px;
+}
+.button
+{
+
+}
+.person
+{
+	width:100%;
+	float:left;
+	border-top:1px #F7F3F7 solid;
+}
+.person .title
+{
+	text-align:left;
+	font-size:24px;
+	margin-top:30px;
+}
+.person .content
+{
+	width:100%;
+}
+.top
+{
+	border-top:1px #F7F3F7 solid;
+}
+.left
+{
+	border-right:1px  #F7F3F7 solid;
+}
+.button
+{
+border-top:1px #F7F3F7 solid;
+}
+.content .top .left
+{
+	width:45%;
+}
+.content .top .right
+{
+	width:45%;
+}
+.main2
+{
+	width:100%;
+	float:left;
+}
+.button
+{
+	float:left;
+	width:100%;
+	
+}
+.content .button .left
+{
+	width:45%;
+}
+.button .main1
+{
+	
+}
+.person .content .button .right
+{
+	width:45%;
+}
+.move_left
+{
+	
+	width:36px;
+	height:56px;
+	position: fixed;
+	top:300px;
+	left:90px;
+	background:url(/wish/Public/res/images/angle/direction.png);
+	background-position: 0 -112px;
+	background-repeat: no-repeat;
+}
+.main2
+{
+	color:red;
+}
+li
+{
+list-style:none;
+}
+.title
+{
+	color:red;
+	height:80px;
+	margin-left:8px;
+}
+
+.move_right
+{	
+		
+		width:36px;
+		height:56px;
+		right:90px;
+		top:300px;
+		position: fixed;
+		background:url(/wish/Public/res/images/angle/direction.png);
+		background-repeat: no-repeat;
+		background-position: 3px -168px;
+}
+.before
+{
+	border:5px  #94C339 outset;
+	margin-left:3px;
+}

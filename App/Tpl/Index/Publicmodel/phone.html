@@ -1,0 +1,146 @@
+<button data-toggle="modal" data-target="#myModal1" id="phone" style="display:none">
+   登录
+</button>
+<style type="text/css">
+.get_verify{
+	border:1px solid #888888;
+	margin-left: 90px;
+	border-radius: 25px;
+	-web-kit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	padding: 10px 25px;
+	margin-bottom: 20px;
+	width: 150px;
+	cursor:pointer;
+  color: #888;
+}
+.get_verify_again{
+	color: #aaa;
+	padding: 1px;
+	margin-bottom: 20px;
+	width: 50px;
+	cursor:pointer;
+}
+.get_verify_again:hover{
+	color: #888;
+}
+.get_verify:hover{
+	background-color:#33a600;
+	color: #fff;
+}
+.phone_sup{
+  border:0px;
+	display: none;
+text-align: center;
+padding: 5px 5px;
+height: 35px;
+color: #ffffff;
+background: #FF7F3F;
+border-radius: 5px;
+-web-kit-border-radius: 5px;
+-moz-border-radius: 5px;
+width: 220px;
+font-size: 18px;
+margin: 0px auto;
+cursor: pointer;
+
+}
+.verify{
+	display: none;
+}
+.phone_num{
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+.alert_phone{
+  color: red;
+  
+}
+.again{
+  display: none;
+}
+</style>
+<!-- 按钮触发模态框 -->
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"  
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content" style="width:700px;margin:0px auto;margin-top:100px;">
+         <div class="modal-header" style="background-color:#f3f3f3" style="margin:0px auto
+         ">
+          <button type="button" class="close" data-dismiss="modal" 
+               aria-hidden="true">×
+            </button>
+         <div class="mobile" style="margin:0px auto;width:600px;height:200px;background:url(__PUBLIC__/res/images/index/phonetest.jpg) no-repeat;">
+		         	
+
+         </div>
+         </div>
+         <div class="modal-body" style="text-align:center;min-height:150px;">
+         <table style="text-align:center;margin:0px auto;">
+           <tr>
+             <td style="padding-bottom: 20px;">
+                <span>手机号:  </span><span style='color:#888' >(+86)</span>
+             </td>
+             <td>
+             <input type="text"  name="phone_num" class="phone_num" />   
+                
+             </td>
+           </tr>
+            <tr class="verify">
+              <td style="padding-bottom: 20px;"><span>验证码: </span></td>
+              <td><input type="text"  name="verify" class="phone_num" /></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div>
+            <input  type='button' class="get_verify  get_verify_again1"  value="免费获取验证码>"  />
+          </a>
+          </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                    <button class="phone_sup">
+                    支持
+                  </button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                  <div style="height:50px;margin-left:0px;font-size: 12px;margin-top:30px;" class="again" >
+            如2分钟后仍未收到，请尝试
+            <a    href="javascript:void(0);" class="get_verify_again get_verify_again1   " style="text-decoration: none;" >再次获取>
+            </a>
+            <p class="alert_phone"></p>
+
+          </div>
+
+              </td>
+            </tr>
+         </table>
+    			
+		
+    		
+         </div>
+       
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+ <script>
+   var login_url="{:U('Index/Login/login','','')}";
+      var login_check="{:U('Index/Login/login_check','','')}";
+      var login_verify='{:U("Index/Login/verify","","")}';
+      var login="{:U('Index/Login/','','')}";
+        var rem_login="{:U('Index/Login/rem_login','','')}";
+      var home="{:U('/Index','','')}"; 
+  // $("#t_login").click();
+   // $(function () { $('#myModal').modal({
+   //    keyboard: true
+   // })});
+
+ </script>
+   <script type="text/javascript">
+    var check_rem="{:U('publicmodel/check_rem','','')}";
+    var exit_url="{:U('/index/publicmodel/exit1','','')}";
+    </script>

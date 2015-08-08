@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	   <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/personalPagebase.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/newsCenter.css">
+	<!--模态框-->
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/modal/css/component.css" />
+	<script src="__PUBLIC__/modal/js/modernizr.custom.js"></script>
+	<!--/模态框-->
+	<title>我的众筹-发起的项目</title>
+</head>
+<body>
+
+<!--模态框-->
+	<div class="md-modal md-effect-1" id="modal-1">
+    <div class="md-content">
+        <h3>系统消息</h3>
+        <div>
+            <p>未通过，具体情况请联系相关人员</p>
+            <button class="md-close">关闭</button>
+        </div>
+    </div>
+	</div>
+	
+	<div class="md-overlay"></div><!-- the overlay element -->
+
+<!--/模态框-->
+	<!-- 头部 -->
+<include file="Publicmodel:head" />
+	<!-- 主内容去区-->
+	<div class="main clearfix">
+		<div class="setting wrap">
+			<div class="setting-title clearfix">
+			<h3>我的众筹</h3>
+			</div>
+			<div class="setting-content clearfix">
+				<div class="setting-menu">
+					<ul class="clearfix">
+					<!--
+						<li class="select"><a class="icons msg ie6fixpic" href="{:U('index/personalPage/myCrowdfunding','','')}">发起的项目</a></li>
+						-->
+						<li><a class="icons rec-com ie6fixpic" href="{:U('/support','','')}">支持的项目</a></li>
+						<li><a class="icons rec-com ie6fixpic" href="{:U('/atten','','')}">关注的项目</a></li>
+					</ul>
+				</div>
+				<div class="setting-detail">
+				<div class="setting-address">
+					<h3 class="green">发起的项目</h3>
+					<p>您可以查看您发起的项目详情</p>
+					<!--address tab 地址管理列表 static-->
+					<div class="address-tab" id="addr_list" style="display: block; padding-top:50px;">
+<!-- 						<div class="btn-add">
+							<a class="btn-base btn-red-h30 common-sprite" onclick="add_addr()">
+								<span class="common-sprite">添加地址</span>
+							</a>
+						</div> -->
+						<!-- 所有，审核通过，未通过分类显示 -->
+						<!-- <div class=""></div> -->
+						<div class="ads-list">
+													<table>
+								<colgroup>
+									<col width="70">
+									<col width="90">
+									<col width="90">
+									<col width="90">
+									<col width="90">
+									<col width="90">
+									<col width="155">
+									
+								</colgroup>
+								<thead>
+									<tr>
+										<th>图片</th>
+										<td>项目名称</td>
+										<td>发布日期</td>
+										<td>截止日期</td>
+										<td>目标</td>
+										<td>进度</td>
+										<td>状态</td>
+									</tr>
+								</thead>
+								<tbody>
+								<volist name="item" id="vo">
+									<tr>
+										<switch name="vo.item_check" >
+											<case value="0"><th><img style="width:50px;" src="{$vo.img}"></th></case>
+											<case value="1"><th><img style="width:50px;" src="__PUBLIC__/res/images/items/{$vo.img}"></th></case>
+											<default />默认情况
+										</switch>
+										<td>{$vo.title}</td>
+										<td>{$vo.begin_time}</td>
+										<td>{$vo.end_time}</td>
+										<td>{$vo.money}</td>
+										<td>{$vo.gain}元 {$vo.precent}%</td>
+										<eq name="vo.item_check" value="1">
+										
+											<eq name="vo.success" value="1">
+												<td data-id="57264">已完结<a class="green Js-addr-modify" href="{:U('index/detail/index?item_id='.$vo['id'],'','')}">（详情）</a></br></td>
+											<else/>
+												<td data-id="57264">众筹中<a class="green Js-addr-modify" href="{:U('index/detail/index?item_id='.$vo['id'],'','')}">（详情）</a></br></td>
+											</eq>
+										<else/>
+											<td data-id="57264">未通过<a class="green Js-addr-modify" href="javascript:;">
+				<!--模态框-->							<a class="green Js-addr-modify md-trigger" data-modal="modal-1">详情</a><!--/模态框-->
+											</a></br><a class="green Js-addr-del" href="javascript:;">重新编辑</a></td>
+										</eq>
+									</tr>
+								</volist>
+								</tbody>
+							</table>
+													</div>
+					</div>
+				</div>
+				<!--setting address end-->
+			</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- 尾部 -->
+<include file="Publicmodel:person_footer" />
+	<!--模态框-->
+		<div class="md-overlay"></div><!-- the overlay element -->
+		<script src="__PUBLIC__/modal/js/classie.js"></script>
+		<script src="__PUBLIC__/modal/js/modalEffects.js"></script>
+		<script>
+			var polyfilter_scriptpath = '/js/';
+		</script>
+		<script src="__PUBLIC__/modal/js/cssParser.js"></script>
+		<script src="__PUBLIC__/modal/js/css-filters-polyfill.js"></script>
+	
+	<!--/模态框-->
+</body>
+</html>

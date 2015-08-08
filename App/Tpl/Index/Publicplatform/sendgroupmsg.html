@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<HEAD>
+	<META content="IE=11.0000" http-equiv="X-UA-Compatible">		 
+	<META charset="utf-8"> 
+   <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+	<META http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<TITLE>群发消息</TITLE> 
+	<LINK href="__PUBLIC__/res/css/layout.css" rel="stylesheet" type="text/css"> 
+	<LINK href="__PUBLIC__/res/css/base.css" rel="stylesheet" type="text/css"> 
+	<LINK href="__PUBLIC__/res/css/lib.css" rel="stylesheet" type="text/css">        
+	<LINK href="__PUBLIC__/res/css/page_index.css" rel="stylesheet">  
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/sendGroupMsg.css">  
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/platform.css">   
+	 
+
+	<!-- 富文本编辑器 -->
+	<script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor-min.js"></script>
+	<link rel="stylesheet" href="__PUBLIC__/kindeditor/themes/default/default.css" />
+	<script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
+
+	<script>
+		var editor;
+		KindEditor.ready(function(K) {
+			editor = K.create('textarea[name="content"]', {
+				resizeType : 1,
+				allowPreviewEmoticons : false,
+				allowImageUpload : false,
+				items : [
+					'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+					'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+					'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+			});
+		});
+	</script>   
+	<!-- 富文本编辑器 -->
+
+</HEAD>     
+<BODY class="zh_CN">
+		<DIV class="head" id="header">
+				<DIV class="head_box">
+				<div class="bg-top">
+				 <!-- <img src="__PUBLIC__/res/images/login/bg-top.png">  -->
+			</div>
+						<DIV class="inner wrp">
+						<H1 class="logo"><A title="公众平台" href="{:U('/index')}"></A></H1>
+								<DIV class="account">
+										<DIV class="account_meta account_info">
+												<A class="nickname" href="{:U('/mp/set')}">{$nickname}</A> 
+				                                <A href="{:U('/my')}"><IMG 
+												class="avatar" src="__PUBLIC__/res/images/person_img/{$img}"></A>                            
+										 </DIV>
+									<DIV class="account_meta account_logout">
+										<A id="logout" href="{:U('index/Publicplatform/logOut')}">退出</A>
+									</DIV>
+								</DIV>
+						</DIV>
+				</DIV>
+		</DIV>
+<DIV class="body page_index" id="body">
+	<DIV class="container_box cell_layout side_l" id="js_container_box">
+			<DIV class="col_side">
+					<DIV class="menu_box" id="menuBar">
+							<DL class="menu no_extra">
+									  <DT class="menu_title">
+											功能 				
+										</DT>
+									  <DD class="menu_item ">
+											<A href="javascript:void(0)">群发功能</A>
+									  </DD>
+									  <DD class="menu_item "><A href="{:U('/mp/news','','')}">消息回复</A>
+									  </DD>
+							  </DL>
+							<DL class="menu ">
+									  <DT class="menu_title">管理 
+									</DT>
+
+										<DD class="menu_item "><A href="{:U('/mp/item','','')}">项目管理</A></DD>	
+									
+									  <DD class="menu_item "><A href="{:U('/mp/product','','')}">发货管理</A></DD>
+									  
+									  <DD class="menu_item "><A href="{:U('/mp/user','','')}">用户管理</A></DD>
+									  
+							  </DL>
+
+							  	<DL class="menu ">
+									  <DT class="menu_title">设置 
+									</DT>
+									
+									  <DD class="menu_item "><A href="{:U('/mp/set','','')}">公众号设置</A>
+									  </DD>
+									  
+							  </DL>
+				
+					  </DIV>
+			  </DIV>
+			  
+			  
+			  
+		  
+		  <DIV class="col_main">
+		<DIV class="main_hd">
+		<H2>群发功能</H2>
+		<DIV class="extra_info mini_tips icon_after"><A href="javascript:;" 
+		target="_blank">群发消息规则说明</A><I class="icon_mini_tips document_link"></I>     
+		</DIV></DIV>
+		<DIV class="main_bd">
+			<form action="{:U('index/Publicplatform/getinfo')}" method="post">
+				<DIV class="highlight_box">
+				<P class="desc">            
+				为保障用户体验，公众平台严禁恶意营销，严禁发布色情低俗、暴力血腥、政治谣言等各类违反法律法规及相关政策规定的信息。一旦发现，我们将严厉打击和处理。 
+					   </P>
+				</DIV>
+
+		<!-- 选择消息发送对象 -->
+			<div class="grid_line send_filter">
+
+		        <div class="grid_item target">
+		            <label class="label" for="">群发对象</label>
+		            <div class="filter_content">
+		                <div class="dropdown_menu" id="js_sendObj">
+		                	<select id="object" name="object">
+		                		<option>全部用户</option>			               	
+		                	</select>
+
+						</div>
+
+		            </div>
+		        </div>
+
+		        <div class="grid_item sex">
+		            <label class="label" for="">类型</label>
+		            <div class="filter_content">
+		            	    <select id="type" name="type">
+		                		<option>关注者</option>
+		                		<option>支持者</option>
+		                	</select>
+						</div>
+		            </div>
+		     </div>
+
+
+
+			<!-- 富文本编辑器 -->
+		 	<DIV class="msg_sender" id="js_msgSender">
+
+			<textarea name="content" style="width:900px;height:300px;visibility:hidden;"></textarea>
+
+			</DIV>
+
+			<DIV class="tool_bar">
+			<SPAN class="btn btn_input btn_primary">
+				<button type="submit">提交</button></SPAN>     
+			</DIV>
+		</form>
+		</DIV>
+	
+</DIV>
+		  
+	 
+
+
+
+	 </DIV>
+	<DIV class="faq">
+		<UL class="links">
+		  <LI class="links_item no_extra"><A href="http://wpa.qq.com/msgrd?v=3&uin=3143239359&site=qq&menu=yes" 
+		  target="_blank">在线客服</A></LI>
+		  <LI class="links_item"><A href="http://wpa.qq.com/msgrd?v=3&uin=521187146&site=qq&menu=yes" 
+		  target="_blank">客服中心</A></LI></UL>
+	</DIV>
+</DIV>
+
+
+<include file="Publicmodel:person_footer" /> 
+                  
+
+             </BODY></HTML>

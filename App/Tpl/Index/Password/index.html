@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+      <!-- 指定以最新的IE版本模式来显示网页 -->
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/login.css">
+  <link href="__PUBLIC__/res/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <title>找回密码</title>
+</head>
+<body>
+  <div class="header">
+    <div class="header_top"></div>
+    <div class="header_main">
+      <div class="logo">
+        <a href="{:U('Index/Index/index')}"></a>
+      </div>
+      <div class="motto">
+        <img src="__PUBLIC__/res/images/top_pic/motto.png">
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="main_form">
+      <h1>找回密码<span style="font-size:14px;">&nbsp;&nbsp;<a href="{:U('Index/Register/','','')}">前往注册</a></span></h1>
+      <p>
+      <span style="font-size:14px;">&nbsp;&nbsp;请输入你的注册邮箱，系统将把你的密码以邮件的方式发给您</span>
+      </p>
+      <p class="gform-box">
+        <input type="text" class="form-control" id="name" placeholder="您的邮箱" name="uername" style="width:60%;display:inline;">
+        <!-- 用户空，显示提示信息 -->
+        <span id="user_msg" style="padding-left:10px;color:red;display:none;"></span>
+          </p>
+          <p class="gform-box">
+              <input type="text" style="width:30%;display:inline;" class="form-control" id="ver_code" name="verify"  placeholder="验证码">
+         <img  class='verify' style="padding-left:20px;" src="{:U("Index/Login/verify","","")}">
+         <span id="code_msg" style="padding-left:10px;color:red;display:none;"></span>
+          </p>
+          <p class="gform-box"style="padding-left:10px;">
+              <button type="button" class="btn btn-success login" id="confirm" >确&nbsp;定</button>
+          </p>
+
+    </div>
+  </div>
+  <div class="gbottom">
+      <div class="gbottom-nav">
+          <a href="#">关于我们</a>
+          <a href="#">加入呆萌</a>
+          <a href="#">媒体报道</a>
+          <a href="#">帮助中心</a>
+          <a href="#">内容专区</a>
+          <a href="#">免责声明</a>
+          <a href="#">联系我们</a>
+          <a href="#">移动版</a>
+      </div>
+      <div class="gbottom-i">©2014呆萌网&nbsp;湘ICP备09043258号-2&nbsp;湘公网安备1101052730</div>
+  </div>
+
+  <script src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+    <script src="__PUBLIC__/res/bootstrap/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/res/js/password.js" charset="utf-8"></script>
+    <!-- 验证码显示 -->
+<script type="text/javascript">
+      var login_url="{:U('Index/Password/password','','')}";
+      var login="{:U('Index/Password/','','')}";
+      var home="__ROOT__";
+      $('.verify').click(
+        function(){
+          $(this).attr('src',"{:U('Index/Login/verify','','')}?"+Math.random()); 
+        }
+        );
+      // 用户名，密码空值判断 
+      var flag=false;//用来判断输入框中是否全部都被输入值
+
+  </script>
+</body>
+</html>

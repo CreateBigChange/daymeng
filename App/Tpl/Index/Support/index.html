@@ -1,0 +1,254 @@
+ <!DOCTTYPE html>
+
+<html>
+
+  <head>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta http-equiv="pragma" content="no-cache">
+
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+    <meta http-equiv="expires" content="0">
+
+    <meta name="description" content="京东金融综合互联网理财服务，基金理财,金融服务，敬请享受! "/>
+
+    <meta name="Keywords" content="众筹,京东理财,网上理财,基金理财,金融服务,马上有钱,理财规划,个人理财,家庭理财,第三方理财,投资理财/">
+
+    <link rel="stylesheet" href="__PUBLIC__/res/bootstrap/css/bootstrap.css"/>
+
+    <link rel="stylesheet" href="__PUBLIC__/res/css/support.css"/>
+
+    <link rel="stylesheet" href="__PUBLIC__/res/css/hf.css"/>
+
+    <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+
+  </head>
+
+
+
+ <body>
+
+    <!--包含头文件的渲染-->
+
+<include file="Publicmodel:index" />
+
+    <div class="support">
+
+      	
+
+      <div class="support_title" style="padding:5px 10px;">{$dm_address.items.title}</div>
+
+     
+
+      <div class="support_content">
+
+        <div>
+
+          <span class="support_weight">支持金额：</span>
+
+          <span class="support_red  money">{$dm_address.repay.money}</span>
+
+        </div>
+
+        <div>
+
+          <span class="support_weight">配送费用：</span>
+
+          <span >{$dm_address.repay.send_money}</span>
+
+        </div>
+
+        <div>
+
+          <span class="support_weight">回报内容：</span>
+
+          <span >{$dm_address.repay.content}</span>
+
+        </div>
+
+        <div class="_address">
+
+          <span class="support_weight" >收货人：</span>
+
+          <span style="color:#a7ce37;font-weight:bold;cursor:pointer"	onclick="show_edit(2)">使用新地址</span>
+
+          <div class="total_address">
+
+
+
+          	<foreach item="v" name="dm_address.dm_address">
+
+           <span class="addresss" > <input type="radio" name="address" checked value="{$v.id}" />
+
+            <span>
+
+           <span class="address_name">{$v.name}</span>
+
+           <span class="address_phone">{$v.phone_number}</span>
+
+           <span class="phone_alert">(手机号码用来接收回报信息，请确认无误!)</span>
+
+           <span class="address_province">{$v.province}</span>
+
+           <span class="address_town">{$v.town}</span>
+
+           <span class="address_district">{$v.district}</span>
+
+           <span class="detail_address">{$v.detail_address}</span>
+
+           <span class="postcode">{$v.postcode}</span>
+
+           <a href="###" style="margin-left:20px; display:" class="judge_edit"  onclick="show_edit(1)">编辑</a>
+
+           <a href="###" style="margin-left:20px; display:" class="judge_edit"  onclick="show_edit(2)">添加</a>
+
+           <a href="###" style="margin-left:20px; display:" class="judge_edit"  onclick="dele_address()">删除</a>
+
+            </span>
+
+   
+
+          </span>
+
+          </foreach>
+
+          </div>
+
+         
+
+         
+
+          <div class="edit_address">
+
+              <table >
+
+                <tr>
+
+                  <td><span class="support_red">*</span>收货人</td>
+
+                  <td><input type="text" style="width:100px;" id="address_name"/></td>
+
+                  <td><span class="address_alert"></span></td>
+
+                </tr>
+
+                <tr>
+
+                  <td><span class="support_red">*</span>地区</td>
+
+                  <td > <select id="sel_Province" style="min-width:135px;padding:0xp;margin:0px;" name="sel_Province" >
+
+					</select>
+
+				</td>
+
+                  <td><select id="sel_City" name="sel_City" style="min-width:135px;">
+
+				</select></td>
+
+                  <td><select id="sel_County" name="sel_County" style="min-width:135px;">
+
+				</select></td>
+
+                </tr>
+
+                <tr>
+
+                  <td><span class="support_red">*</span>详细街道地址</td>
+
+                  <td><input type="text" id="detail_address" /></td>
+
+                </tr>
+
+                <tr>
+
+                  <td><span class="support_red">*</span>手机号码</td>
+
+                  <td><input type="text" style="width:100px;"  id="address_phone" /></td>
+
+                </tr>
+
+                <tr>
+
+                  <td><span class="support_red">*</span>邮政编码</td>
+
+                  <td><input type="text" style="width:100px;"  id="postcode" /></td>
+
+                </tr>
+
+
+
+              </table>
+
+                <button class="sav_address" style="padding:0px;" >保存收货人地址</button>
+
+
+
+            </div>
+
+
+
+        </div>
+
+        <div class="risk_expalin" style="padding:5px;">
+
+      		<div class="risk_title" style="margin:0px;margin-top:5px;">风险说明</div>
+
+      		<div class="risk_content" style="margin:0px;">
+
+      			呆萌众筹是一个对用户、发起者完全免费开放的众筹平台，公众基于对项目、发起人和回报的认同，通过资助的方式参与和支持创新。
+
+如项目最终众筹失败，我们会将您支持的金额全额退款。
+
+      		</div>
+
+
+
+      </div>
+
+      <form action='{:U("index/support/next",'','')}' method="post" >
+
+      <input  name ="repay_id" style="display:none"value="{$dm_address.repay.id}" />
+
+        <input  name ="items_id"  style="display:none"value="{$dm_address.repay.items_id}" />
+
+        <input  name ="address_id"  style="display:none"value="<?php echo  $dm_address["dm_address"]['0']['id']?>" />
+        <input type="submit" class="next_support" style="margin:0px auto;" value='下一步' />
+
+      </form> 
+
+      </div>
+
+    </div>
+<include file="Publicmodel:footer" />
+
+
+
+
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/md5.js"></script>
+
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/bootstrap/js/bootstrap.min.js"></script>
+
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/hf.js"></script>
+
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/Region.js"></script>
+
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/support.js"></script>
+
+        <script type="text/javascript">
+
+            var sav_address='{:U("index/support/sav_address",'','')}';
+
+            var del_address='{:U("index/support/del_address",'','')}';
+
+            var next_address='{:U("index/support/next",'','')}';
+            var judge_number='{:U("index/support/judge_number",'','')}'
+        </script>
+
+    </body>
+
+  </html>

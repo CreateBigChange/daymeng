@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	   <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/personalPagebase.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/newsCenter.css">
+	<!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/modal/css/default.css" /> -->
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/newsCenter.js"></script>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/modal/css/component.css" />
+	<script src="__PUBLIC__/modal/js/modernizr.custom.js"></script>
+	<title>消息中心-系统消息</title>
+</head>
+<body>
+	<!-- 头部 -->
+<include file="Publicmodel:head" />
+	<!-- 主内容去区-->
+		<div class="main clearfix">
+			<div class="setting wrap">
+				<div class="setting-title clearfix">
+				<h3>消息中心</h3>
+				</div>
+				<div class="setting-content clearfix">
+					<div class="setting-menu">
+						<ul class="clearfix">
+							<li><a class="icons msg ie6fixpic" href="{:U('/news','','')}">私信</a></li>
+							<li class="select"><a class="icons rec-com ie6fixpic" href="{:U('/system','','')}">系统消息</a></li>
+							<li><a class="icons rec-com ie6fixpic" href="{:U('/comment','','')}">评论</a></li>
+						</ul>
+					</div>
+					<div class="setting-detail">
+					<!--setting address static-->
+					<div class="setting-address">
+						<h3 class="green">系统消息管理</h3>
+						<p>可添加管理您收到的系统消息</p>
+						<!--address tab 地址管理列表 static-->
+						<div class="address-tab" id="addr_list" style="display: block; padding-top:50px;">
+	<!-- 						<div class="btn-add">
+								<a class="btn-base btn-red-h30 common-sprite" onclick="add_addr()">
+									<span class="common-sprite">添加地址</span>
+								</a>
+							</div> -->
+							<!--分类框 已发送，已接受，未查看 -->
+							<div class="ads-list">
+								<table>
+									<colgroup>
+										<col width="70">
+										<col width="160">
+										<col width="350">
+										<col width="90">
+										<col width="105">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>发件人</th>
+											<td>发送时间</td>
+											<td>预览</td>
+											<td>状态</td>
+											<td>操作</td>
+										</tr>
+									</thead>
+									<foreach name="result" item="vo">
+										<tbody style="font-size=12px;">
+																				<tr>
+												<th>系统消息</th>
+												<td>{$vo['time']}</td>
+												<td>{$vo['preview']}</td>
+												<eq name="vo['is_read']" value="0">
+													<td class="islook" style="color:red;">未阅读</td>
+												<else/>
+													<td class="islook" style="color:#000000;">已阅读</td>
+												</eq>
+												<td data-id="{$vo['id']}">
+													<a class="green jsdel" href="javascript:;" data-type="0">删除</a>
+													<!-- <button class="" data-modal="modal-1">查看</button> -->
+													<a class="green jslook md-trigger " data-modal="{$vo['mid']}" href="javascript:;" data-type="0">查看</a>
+												</td>
+
+											</tr>	
+										<!-- 模态框 -->									
+										<div class="md-modal md-effect-1" id="{$vo['mid']}">
+										<div class="md-content">
+										    <h3>系统消息</h3>
+										    <div>
+										        <p>{$vo['content']}</p>
+										        <button class="md-close">关闭</button>
+										    </div>
+										</div>
+										</div>
+
+										</tbody>
+									</foreach>
+								</table>
+														</div>
+						</div>
+					<!--setting address end-->
+				</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 尾部 -->
+<include file="Publicmodel:person_footer" />
+		<!-- 模态框 -->
+		<div class="md-overlay"></div><!-- the overlay element -->
+		<script src="__PUBLIC__/modal/js/classie.js"></script>
+		<script src="__PUBLIC__/modal/js/modalEffects.js"></script>
+		<script>
+			var polyfilter_scriptpath = '/js/';
+			var del_url="{:U('index/personalPage/delnews')}";
+			var look_url="{:U('index/personalPage/looknews')}";
+		</script>
+		<script src="__PUBLIC__/modal/js/cssParser.js"></script>
+		<script src="__PUBLIC__/modal/js/css-filters-polyfill.js"></script>
+
+		<!-- 查看,删除-->
+		<script type="text/javascript" src="__PUBLIC__/res/js/systemNews.js"></script>
+	
+</body>
+</html>

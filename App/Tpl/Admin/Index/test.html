@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form action="{:U('admin/login/login','','')}" method="post" >
+	<input  type="text "  name="verify" value="11" />
+	<!-- <button type="submit" >提交</button>  -->
+		<td><input type="text" name="verify" placeholder='请输入验证码'/></td>
+	<td><img  id="_code" src="{:U('admin/login/verify','','')}"></td>
+	<input type="submit"  value="提交" />
+</form>
+</body>
+</html>

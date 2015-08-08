@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	    <meta name="description" content="呆萌网,呆萌首页,大学生众筹,大学生社交，呆萌众筹,众筹公益,呆萌基金,呆萌公益,大学生公益"/>
+
+    <meta name="Keywords" content="呆萌网,呆萌首页,大学生众筹,众筹网，大学生社交/">
+   <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+	 <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+	<title>项目信息</title>
+
+
+    <link rel="stylesheet" href="__PUBLIC__/res/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/res/css/hf.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/start_item.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/start_item2.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/start_item3.css">
+
+</head>
+<body class="main" onload="setup();preselect('湖南省');promptinfo();">
+<include file="Publicmodel:index" />
+<!--头文件的包含-->
+	<div class="container">
+		<div class="order-process">
+			<ul style="list-style-type:none">
+	            <li>
+	                发起人信息
+	                <span class="order_behind_arrow order_arrow"></span>
+	                <span class="order_ahead_arrow order_arrow"></span>
+	            </li>
+	            <li class="active">
+	                项目信息
+	                <span class="order_behind_arrow order_arrow"></span>
+	                <span class="order_ahead_arrow order_arrow"></span>
+	            </li>
+	            <li>
+	                回报设置
+	                <span class="order_behind_arrow order_arrow"></span>
+	                <span class="order_ahead_arrow order_arrow"></span>
+	            </li>
+	            <li>
+	                完成项目
+	                <span class="order_behind_arrow order_arrow"></span>
+	                <span class="order_ahead_arrow order_arrow"></span>
+	            </li>
+        	</ul>
+
+		</div>
+		<div class="title">
+			<div class="col-md-3 title-content">
+				项目信息
+			</div>
+			<div class="col-md-9"></div>
+		</div>
+		<div class="info_body">
+			<div class="body_left">
+				<form action="{:U('index/Iteminfo/getInfo')}" method="POST" name="iteminfo" enctype="multipart/form-data">
+					<div  class="row info-body3">
+							   	<div class="col-md-2">
+									<label for="title" select="option" id="lab_title">项目名称</label>
+								</div>
+								<div class="col-md-4 form_pos">
+									<input type="text" class="form-control" name="itemname" id="title" placeholder="请输入申请项目的名称">
+								</div>
+							</div>
+
+							<div class="row info-body4">
+								   	<div class="col-md-2">
+										<label for="money" select="option" id="lab_money">筹集金额</label>
+									</div>
+									<div class="col-md-4 form_pos">
+										<input type="text" class="form-control" name="money" id="money" placeholder="不限">
+									</div>
+									<div class="col-md-2" style="padding-top:5px;font-size:15px;margin-left:-20px;"><label for="" select="option">元</label></div>
+							</div>
+							<div class="row info-body4">
+								   	<div class="col-md-2">
+										<label for="day" select="option" id="lab_day">筹集天数</label>
+									</div>
+									<div class="col-md-4 form_pos">
+										<input type="text" class="form-control" name="day" id="day" placeholder="7-90天">
+									</div>
+									<div class="col-md-2" style="padding-top:5px;font-size:15px;margin-left:-20px;"><label for="" select="option">天</label></div>
+							</div>
+							<div class="row info-body4">
+								   	<div class="col-md-2">
+										<label for="class" select="option" id="lab_class">项目类别</label>
+									</div>
+									<div class="col-md-10 form_pos">
+										<span class="radio_pos"><input type="radio" name="iCheck" id="class" value="activity">活动</span>
+										<span class="radio_pos"><input type="radio" name="iCheck" id="class" value="lecture">讲座</span>			
+										<span class="radio_pos"><input type="radio" name="iCheck" id="class" value="movie">影视</span>
+										<span class="radio_pos"><input type="radio" name="iCheck" id="class" value="public">公益</span>
+										<span class="radio_pos"><input type="radio" name="iCheck" id="class" value="create">创意</span>
+										<span class="radio_pos"><input type="radio" name="iCheck" id="class" value="life">生活</span>
+										<span class="radio_pos"><input type="radio" name="iCheck" id="class" value="study">学习</span>
+										<span class="radio_pos"><input type="radio" name="iCheck" id="class" value="other">其他</span>
+									</div>
+							</div>
+							<div class="row info-body4">
+								   	<div class="col-md-2">
+										<label for="s1" select="option" id="lab_city">筹集地点</label>
+									</div>
+									<div class="col-md-10 address_select form_pos">
+						            	<select class=" control-label" name="province" id="s1">
+											  <option></option>
+										</select>
+										<select class=" control-label" name="city" id="s2" style="margin-left:20px;">
+											  <option></option>
+										</select>
+									</div>
+								<!-- <input id="address" name="address" type="hidden" value="" />  -->
+							</div>
+							<div class="row info-body4">
+								   	<div class="col-md-2">
+										<label for="up" select="option" id="lab_photo">项目封面</label>
+									</div>
+									<div class="col-md-6 form_pos">
+	      									<input type="file" id="up" name="photo"/>
+	      									<span class="help-block"> 
+	      										上传图片将作为项目的封面。</br>
+								 				照片内容真实有效。</br>
+								 				支持.jpg .jpeg .bmp .gif格式照片，大小不超过2M
+								 			</span>
+									</div>
+							</div>
+							<!-- 图片上传之后的预览js -->
+							<div class="row info-body4">
+								   	<div class="col-md-2">
+										<label for="introduce" select="option" id="lab_introduce">项目简介</label>
+									</div>
+									<div class="col-md-6 form_pos">
+										<textarea class="form-control" rows="3" name="introduce" id="introduce"></textarea>
+									</div>
+							</div>
+							<div class="row info-body4">
+								   	<div class="col-md-1">
+										<label for="" select="option">详情</label>
+									</div>
+									<div class="col-md-11 form_pos">
+										<textarea id="editor_id" name="content" style="width:100%;height:600px;">
+											
+											<h2 style="color:#A5D21E">介绍我是谁</h2>
+											<p style="color:#646464">向支持者介绍你自己或你的团队，并详细说明你与所发起的项目之间的背景，让支持者能够在最短时间内了解你，以拉近彼此之间的距离，建议不超过100字。</p>
+
+											<h2 style="color:#A5D21E">我的项目介绍</h2>
+											<p style="color:#646464">这是项目介绍中最关键的部分，建议上传5张以上高清图片（宽700、高不限），配合文字来简洁生动地说明你的项目，让支持者对你要做的事情一目了然并充满兴趣。</p>
+											
+											<h2 style="color:#A5D21E">为什么我需要你的支持</h2>		
+											<p style="color:#646464">请在这一部分说明你的项目不同寻常的特色，为什么需要大家的支持以及详细的阐述说明你的项目特色、资金用途、以及大家支持你的理由。这会让更多人关注支持你，建议不超过200字。</p>
+
+											<h2 style="color:#A5D21E">我的承诺与回报</h2>
+											<p style="color:#646464">请在此处展示你为支持者准备的回报，回报方式将是左右项目能否筹资成功的关键因素，建议设定两个以上的回报方式，保证有趣且可行，并明确实现回报的时间。</p>
+
+											<h2 style="color:#A5D21E">可能存在的风险</h2>
+											<p style="color:#646464">请在此标注你的项目在实施过程中可能存在的风险，让支持者对你的项目有全面而清晰的认识。</p>
+											
+											<h2 style="color:#A5D21E">其他备注信息</h2>
+											<p style="color:#646464">其他需要支持者了解的信息。</p>
+										</textarea>
+									</div>
+							</div>
+							<div class="row tool_bar">
+								<div class="col-md-4"></div>
+								<div class="col-md-5">
+									<a href="{:U('/start/info','','')}"><button type="button" class="btn btn-success btn_next" style="font-size:17px">上一步</button></a>
+									<button class="btn btn-success btn_next" style="margin-left:40px;font-size:17px;" type="submit" id="next">下一步</button>
+								</div>
+							</div>
+					</form>
+			</div>
+			<div class="body_right">
+				<img id="ImgPr" width="100%" height="300" style="display: inherit;" />
+			</div>
+		</div>
+
+		 	<script language="javascript" type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>   
+    <script src="__PUBLIC__/res/js/geo.js"></script>
+    <script language="javascript" type="text/javascript" src="__PUBLIC__/res/bootstrap/js/bootstrap.min.js"></script>
+    <script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/hf.js"></script>
+    	<!-- 图片预览 -->
+	<script src="__PUBLIC__/res/js/uploadPreview.min.js" type="text/javascript"></script>
+		<!-- 地址选择器 -->
+		<script>
+			function promptinfo()
+				{
+					var address = document.getElementById('address');
+					var s1 = document.getElementById('s1');
+					var s2 = document.getElementById('s2');
+					address.value = s1.value + s2.value;
+				}
+		</script>
+		<!-- 底下部分，摘陈刚 -->
+	</div>
+		        <include file="Publicmodel:footer" />
+
+		        <!-- 富文本编辑器 -->
+	<link rel="stylesheet" href="__PUBLIC__/kindeditor/themes/default/default.css" />
+	<link rel="stylesheet" href="__PUBLIC__/kindeditor/plugins/code/prettify.css" />
+	<script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/kindeditor/plugins/code/prettify.js"></script>
+	
+	<!-- 图片预览 -->
+	<script>
+	    $(function () {
+	        $("#up").uploadPreview({ Img: "ImgPr", Width: 120, Height: 120 });
+	    });
+    </script>
+	
+
+	<script>
+
+			KindEditor.ready(function(K) {
+			var editor1 = K.create('textarea[name="content"]', {
+				cssPath : '__PUBLIC__/kindeditor/plugins/code/prettify.css',
+				uploadJson : '__PUBLIC__/kindeditor/php/upload_json.php',
+				fileManagerJson : '__PUBLIC__/kindeditor/php/file_manager_json.php',
+				allowFileManager : true,
+				afterCreate : function() {
+					var self = this;
+					K.ctrl(document, 13, function() {
+						self.sync();
+						K('form[name=iteminfo]')[0].submit();
+					});
+					K.ctrl(self.edit.doc, 13, function() {
+						self.sync();
+						K('form[name=iteminfo]')[0].submit();
+					});
+				}
+			});
+			prettyPrint();
+			});
+
+	</script>    
+	<!-- 富文本编辑器 -->
+        <!-- 项目信息提交 -->
+        <script type="text/javascript" src="__PUBLIC__/res/js/itemInfo.js"></script>
+
+        <script type="text/javascript">
+            var exit_url='{:U("index/login/exit1",'','')}';
+            var sort_url='{:U("index/index/sort1",'','')}';
+            var opnion_url='{:U("index/index/opnion",'','')}';
+            var complaint_url='{:U("index/index/complaint",'','')}';
+            var _home='__ROOT__';
+            var PUBLIC='__PUBLIC__';
+        </script>
+    </body>
+  </html>

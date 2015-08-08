@@ -1,0 +1,193 @@
+ <!DOCTTYPE html>
+
+<html>
+
+  <head>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta http-equiv="pragma" content="no-cache">
+
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+    <meta http-equiv="expires" content="0">
+
+    <meta name="description" content="京东金融综合互联网理财服务，基金理财,金融服务，敬请享受! "/>
+
+    <meta name="Keywords" content="众筹,京东理财,网上理财,基金理财,金融服务,马上有钱,理财规划,个人理财,家庭理财,第三方理财,投资理财/">
+
+    <link rel="stylesheet" href="__PUBLIC__/res/bootstrap/css/bootstrap.css"/>
+
+    <link rel="stylesheet" href="__PUBLIC__/res/css/hf.css"/>
+
+    <link rel="stylesheet" href="__PUBLIC__/res/css/next_support.css"/>
+
+    <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+    <style type="text/css">
+  .time_show{
+    text-align: right;
+    width: 300px;
+    height: 20px;
+    float: right;
+    position: relative;
+    top: -50px;
+
+  }
+  .info_time{
+    color: #333;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  .ajax_time{
+    color: red;
+    margin-left: 10px;
+  }
+    </style>
+  
+
+  </head>
+
+
+
+ <body>
+
+    <!--包含头文件的渲染-->
+
+<include file="Publicmodel:index" />
+
+    <div class="next_support">
+
+      <div class="next_title" style="padding:5px 10px;">订单提交成功：{$returns.dm_items.title}</div>
+
+      <div class="next_content">
+      <div class="time_show" > <span class='info_time' ><h3 style="font-family:'Microsoft YaHei';"> 付款剩余时间:<span class='ajax_time' >{$returns.time}</span></h3></span>
+      <input  type="hidden"  class="hid_time"  name="hid_time"  />
+      </div>
+      <div><span class="next_weight">订单号：</span><span class="next_info">{$returns.widout_trade_no}</span></div>
+
+      <div><span class="next_weight">联系人：</span><span class="next_info">{$returns.dm_address.name}</span></div>
+
+      <div><span class="next_weight">联系方式：</span class="next_info"><span>{$returns.dm_address.phone_number}</span></div>
+
+      <div class="next_border"><span class="next_weight">收货人信息：</span class="next_info"><span>
+
+      <span style="padding:0px 5px;">{$returns.dm_address.name}</span>
+
+      <span style="padding:0px 5px;">{$returns.dm_address.phone_number}</span>
+
+      <span style="padding:0px 5px;">{$returns.dm_address.province}</span>
+
+      <span style="padding:0px 5px;">{$returns.dm_address.town}</span>
+
+      <span style="padding:0px 5px;">{$returns.dm_address.district}</span>
+
+      <span style="padding:0px 5px;">{$returns.dm_address.detial_address}</span>
+
+      <span style="padding:0px 5px;">{$returns.dm_address.postcode}</span>
+
+      </span></div>
+
+      <table>
+
+        <tr class="items_info_title">
+
+          <td style="width:250px">项目名称</td>
+
+          <td style="width:100px">发起人</td>
+
+          <td style="width:400px">回报</td>
+
+          <td style="width:100px">支付金额</td>
+
+          <td style="width:100px"> 配送费用</td>
+
+        </tr>
+
+        <tr class="items_info">
+
+          <td><?php 
+
+          if(strlen($returns["dm_items"]["title"])>15)
+
+          echo mb_substr($returns["dm_items"]["title"], 0,15,"UTF-8")."..."  ?></td>
+
+          <td>{$returns.itemsapply_user_niker}</td>
+
+          <td>{$returns.dm_repay.content}</td>
+
+          <td>{$returns.dm_repay.money}</td>
+
+          <td>{$returns.dm_repay.send_money}</td>
+
+        </tr>
+
+      </table>
+
+      <div style="text-align:right"><span style="color:#5e5e5e;margin-right:10px;">应付金额:</span><span style="color:#f35d5d ;font-size:22px;font-weight:bold;">￥{$returns.money}</span></div>
+
+      <form action="{:U('index/pay/doalipay','','')}"  method="post" >
+
+        <input type="hidden" size="30" name="WIDout_trade_no" value="{$returns.widout_trade_no}" />
+
+         <input type="hidden" size="30" name="WIDtotal_fee" value="{$returns.money}" />
+
+        <input type="hidden" size="100" name="WIDsubject" value="{$returns.dm_items.title}" />
+
+        <input type="hidden" size="200" name="WIDbody" value="{$returns.dm_repay.content}" />
+
+
+
+        <button class="next_sub" type="button" >立即付款</button>
+
+      </form>
+
+      </div>
+
+    </div>
+<include file="Publicmodel:footer" />
+
+
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/md5.js"></script>
+
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/bootstrap/js/bootstrap.min.js"></script>
+
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/hf.js"></script>
+
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/next_support.js"></script>
+
+        <script type="text/javascript">
+        var t;
+        var time=$(".ajax_time").text();
+           function settime(TIME){
+           var min=Math.floor(TIME/60);
+           var sec=TIME%60;
+           $(".ajax_time").text(min+"分"+sec+"秒");
+            TIME=TIME-1;
+           $(".hid_time").val(TIME);
+           if(TIME<=0){
+            TIME=0;
+            clearTimeout(t);
+           }
+           t=setTimeout("settime("+TIME+")",1000);
+        }
+        settime(time);
+
+        $(".next_sub").click(function(){
+          if($(".hid_time").val()>0){
+            //在规定的时间内
+            $(".next_sub").parent("form").submit();
+
+          }else{
+            alert("此订单已经过期");
+          }
+        });
+
+                 </script>
+
+
+
+    </body>
+
+  </html>

@@ -1,0 +1,25 @@
+
+<div>
+	<form action="{:U('admin/login/login','','')}" method="post">
+<table>
+	<tr>
+		<td>账号</td>
+		<td><input type="text"  name="username"  placeholder='请输入账号' /> </td>
+	</tr>
+	<tr>
+		<td>密码</td>
+		<td><input type="password" name="password"  placeholder='请输入密码'/></td>
+	</tr>
+	<tr>
+		<td>验证码</td>
+		<td><input type="text" name="verify" placeholder='请输入验证码'/></td>
+		<td><img  id="_code" src="{:U('index/register/verify','','')}" onclick="this.src={:U('index/register/verify' ,'','')}"   ></td>
+
+	</tr>
+	<tr>
+		<td><input type="submit" value="提交"/></td>
+	</tr>
+</table>
+</form>
+</div>
+

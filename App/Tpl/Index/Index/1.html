@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bootstrap 实例 - 动画的进度条</title>
+   <link href='__PUBLIC__/res/bootstrap/css/bootstrap.min.css' rel='stylesheet'/>
+  <link rel='stylesheet' href='__PUBLIC__/res/css/hf.css'/>
+   <link  rel="stylesheet" type="text/css"href='__PUBLIC__/res/css/login.css'/>
+   <script src='__PUBLIC__/res/js/login.js'></script>
+</head>
+<body>
+<style type="text/css">
+   .verify_{
+  display: none;
+ }
+</style>
+<!-- 按钮触发模态框 -->
+
+<button data-toggle="modal" data-target="#myModal" id="t_login" style="display:none">
+   登录
+</button>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"  
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content" style="width:60%;margin:0px auto;margin-top:100px;">
+         <div class="modal-header" style="background-color:#f3f3f3">
+            <button type="button" class="close" data-dismiss="modal" 
+               aria-hidden="true">×
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               <img src="__PUBLIC__/res/images/top_pic/1.9.png" style="width:50px"> 登录呆萌账号
+            </h4>
+         </div>
+         <div class="modal-body">
+         <p class="gform-box alert_" style="padding:0px;margin:0px;display:inline;" >&nbsp</p>
+      <p class="gform-box">
+        <input type="text" class="form-control user_name" id="name" placeholder="邮箱" name="uername" style="width:70%;display:inline;">
+        <!-- 用户空，显示提示信息 -->
+        <span id="user_msg" style="padding-left:10px;color:red;display:none;"></span>
+          </p>
+          <p class="gform-box">
+              <input type="password" class="form-control user_password" id="passwd" name="password"
+                                placeholder="密码" style="width:70%;display:inline;">
+                 <!-- 密码空，显示提示信息 -->
+                <span id="passwd_msg" style="padding-left:10px;color:red;display:none;"></span>
+          </p>
+          <p class="gform-box  verify_">
+              <input type="text" style="width:30%;display:inline;" class="form-control" id="ver_code" name="verify"  placeholder="验证码" disabled="true">
+         <img  class='verify' style="padding-left:20px;" src="{:U("Index/Login/verify","","")}" onclick='this.src="{:U("Index/Login/verify","","")}?+Math.random()"'/>
+         <span id="code_msg" style="padding-left:10px;color:red;display:none;"></span>
+          </p>
+          <p class="gform-box">
+            <input type=checkbox name="remember">自动登录 
+            <span><a href="{:U('index/password/index')}">&nbsp;&nbsp;忘记密码？</a></span>
+          </p>
+          <p class="gform-box">
+              <button type="button" class="btn btn-success login  btn-lg btn-block" id="login" name="button" style="width:280px;">登 录</button>
+          </p>
+         </div>
+       
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+ <script>
+   var login_url="{:U('Index/Login/login','','')}";
+      var login_check="{:U('Index/Login/login_check','','')}";
+      var login_verify='{:U("Index/Login/verify","","")}';
+      var login="{:U('Index/Login/','','')}";
+      var home="__APP__"; 
+  // $("#t_login").click();
+   $(function () { $('#myModal').modal({
+      keyboard: true
+   })});
+
+ </script>
+
+</body>
+</html>     

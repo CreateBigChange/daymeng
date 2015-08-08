@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	   <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/login.css">
+	<link href="__PUBLIC__/res/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+    <script src="__PUBLIC__/res/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/res/js/reset.js"></script>
+	<title>重置密码</title>
+</head>
+<body>
+	<div class="header">
+		<div class="header_top"></div>
+		<div class="header_main">
+			<div class="logo">
+				<a href=""></a>
+			</div>
+			<div class="motto">
+				<img src="__PUBLIC__/res/images/small_pic/login_motto.png">
+			</div>
+		</div>
+	</div>
+	<div class="main2 grow gmt30 gpack">
+        <div class="gspan-19 gprefix-2 main2 ">
+            <h1>输入新密码</h1>
+            <form class="gform" id="regForm" action="{:U('index/Password/getinfo')}" method="POST" novalidate="true">
+             <!--   <p class="check-success">邮箱验证成功！你的邮箱是：1051563965@qq.com</p>-->
+                <p class="reg-summary">正在为注册邮箱为&nbsp;{$mail}&nbsp; 的帐号重置密码。请在下方输入新密码</p>
+
+                <div class="gform-box2">
+                  <div  class="col-sm-4" style="padding-left:0px;" 	><input type="password" class="form-control "   name="password" placeholder="密码" style="float:left" ></div>  
+                  <div class="col-sm-8" style="word-wrap:normal;padding:0px;margin:0px;">&nbsp</div>
+        		</div>
+                <div class="gform-box2">
+                  <div  class="col-sm-4" style="padding-left:0px;" 	><input type="password" class="form-control "    name="repassword" placeholder="确认密码" style="float:left" ></div>  
+                  <div class="col-sm-8" class="alert">&nbsp</div>
+        		</div>
+        		<div class="gform-box2">
+                <button type="submit" class="btn btn-success creat_user" id="ok">重置密码</button>
+
+        		</div>	        			    
+            </form>
+        </div>
+    </div>
+     <include file="Publicmodel:person_footer" />
+</body>
+</html>

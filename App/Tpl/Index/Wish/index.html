@@ -1,0 +1,118 @@
+ <!DOCTTYPE html>
+<html>
+  <head>
+    <title>许愿墙</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="description" content="京东金融综合互联网理财服务，基金理财,金融服务，敬请享受! "/>
+    <meta name="Keywords" content="众筹,京东理财,网上理财,基金理财,金融服务,马上有钱,理财规划,个人理财,家庭理财,第三方理财,投资理财/">
+    <link rel="stylesheet" href="__PUBLIC__/res/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/wishwall.css"/>
+    <style type="text/css">
+  .modal-dialog{
+    width: 30%;
+  }
+  .wish_content{
+    width: 100%;
+    margin: 0px;
+    padding: 5px;
+    border:1px;
+    min-height: 100px;
+  }
+  </style>
+  </head>
+
+ <body>  
+
+    <div class="wall">
+    <div class="make_wish">
+    <div class="bg_ground" data-toggle="modal" data-target="#myModal">
+    </div>
+ 
+    </div>
+            
+            <foreach name="wish" item="v">
+               <div class="wishs" style="left:{:mt_rand(100,1000)}px ;top:{:mt_rand(10,200)}px;">
+                  <div class="_time">
+                  {$v.time} 
+                </div>
+                <div class="_content">
+                  {$v.content}
+                  <div class="_name">{$v.username}</div>
+
+                </div>
+               </div>
+            </foreach>
+    </div>
+
+    <div class="_wishs">
+      <ul class='sort'>
+          <li><a href="###">时间排序</a></li>
+          <li><a href="###">人气排序</a></li>
+      </ul>
+      <table class="feed_inner_list">
+        <tr>
+               
+        </tr>
+     
+      
+        
+      </table>
+      <div class="pages">
+          <a href="###">1</a>
+          <a href="###">2</a>
+          <a href="###">3</a>
+          <a href="###">4</a>
+          <a href="###">5</a>
+          <a href="###">6</a>
+          <a href="###">7</a>
+          <a href="###">8</a>
+          <a href="###">9</a>
+
+      </div>
+    </div>
+        <script language="javascript" type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/res/bootstrap/js/bootstrap.js"> </script>
+        <script type="text/javascript" src="__PUBLIC__/wish.js"> </script>
+        <script type="text/javascript">
+          var handleUrl='{:U("index/wish/handle",'','')}';
+        </script>
+        <!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" 
+               aria-hidden="true">×
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               请输入你的小心愿或大梦想
+            </h4>
+         </div>
+         <div >
+          <textarea class="wish_content"></textarea>
+            
+         <div class="modal-footer">
+            <button type="button" class="btn btn-primary _submit" data-dismiss="modal">
+            <!--data-dismiss="modal"  用来控制关闭-->
+
+               提交
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
+   $(function() { $('#myModal').modal('hide')});
+</script>
+<script type="text/javascript">
+        var wish_sort_url="{:U('index/wish/wishsort','','')}";
+        var PUBLIC="__PUBLIC__"+'/';
+</script>
+<script type="text/javascript" src="__PUBLIC__/ajax.js"></script>
+
+    </body>
+  </html>

@@ -1,0 +1,65 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html><html><head><title></title><style type="text/css">	body{
+
+		background-color:#f3f3f3;
+
+	}
+
+	.manage_user td{
+
+		max-width:300px;
+
+		max-height: 100px;
+
+		padding: 5px 3px;
+
+	}
+
+	table{
+		min-width: 1500px;
+		border-color: #a7ce37;	
+
+	}
+
+	td a{
+
+		margin: 5px 0px;
+
+	}
+
+	.pages a{
+
+		padding: 10px;
+
+	}
+
+	.opration a:hover{
+
+		position: relative;
+
+		left: -2px;
+
+		top: -2px;
+
+	}
+
+	table{
+
+		max-width: 2000px;
+
+	}
+
+	input{
+
+		border: 1px solid #a7ce37;
+
+		border-radius: 3px 3px;
+
+		-web-kit-border-radius: 3px 3px;
+
+		-moz-border-radius: 3px 3px;
+
+	}
+
+
+
+	</style></head><body><table  border="1px" cellspacing="0px" style="margin:0px auto;" class="manage_user"><tr ><td colspan="10"><h2 style="text-align:center">用户一览</h2><form action="<?php echo U('admin/index/user_search','','');?>"method="post" style="text-align:right"><input type="text" value="" name="search_user" placeholder="请输入用户名或者昵称进行搜索" style="width:200px;height:20px;" /><input type="submit" value="搜索用户"  name="sub_search" style="width:80px;height:25px;"  /></form></td></tr><tr><td>id</td><td>账号</td><td>密码</td><td>状态</td><td>昵称</td><td>最近一次登录时间</td><td>最近一次登录ip</td><td>公众号状态</td><td>邮箱</td><td>操作</td></tr><?php if(is_array($user)): foreach($user as $key=>$v): ?><tr><td><?php echo ($v["id"]); ?></td><td><?php echo ($v["username"]); ?></td><td><?php echo ($v["password"]); ?></td><td><?php  if($v["lock_"]==0){ echo "正常"; } if($v["lock_"]==1){ echo "冻结"; } ?></td><td><?php echo ($v["niker"]); ?></td><td><?php echo date("Y-m-d H:i:s",$v["logintime"]) ?></td><td><?php echo ($v["loginip"]); ?></td><td><?php echo ($v["public"]); ?></td><td><?php echo ($v["email"]); ?></td><td class="opration"><a href="<?php echo U('admin/management/opration','','');?>?id=<?php echo ($v["id"]); ?>&table_name=user&kinds=cancel" style="margin-right:5px;" ><img src="__PUBLIC__/res/images/small/sc.gif" title="冻结"></a><a href="<?php echo U('admin/management/opration','','');?>?id=<?php echo ($v["id"]); ?>&table_name=user&kinds=change" style="margin-left:5px;" ><img src="__PUBLIC__/res/images/small/xg.gif" title="修改"></a></td></tr><?php endforeach; endif; ?><tr><td colspan="10" style="text-align:center;" class="pages"><?php echo ($page); ?></td></tr></table></body></html><!--

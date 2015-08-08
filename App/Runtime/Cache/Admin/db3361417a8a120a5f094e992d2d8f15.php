@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html><html><head><title></title></head><body><h1>在线用户： <span style="color:red"><?php echo ($user_number); ?></span></h1></body></html>

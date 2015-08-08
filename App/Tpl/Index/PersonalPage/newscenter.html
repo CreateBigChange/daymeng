@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	   <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/personalPagebase.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/newsCenter.css">
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/modal/css/component.css" />
+
+	<script src="__PUBLIC__/modal/js/modernizr.custom.js"></script>
+	<title>消息中心-私信</title>
+
+
+			<!-- 富文本编辑器 -->
+	<script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor-min.js"></script>
+	<link rel="stylesheet" href="__PUBLIC__/kindeditor/themes/default/default.css" />
+	<script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
+
+
+	<script>
+		var editor;
+		KindEditor.ready(function(K) {
+			editor = K.create('textarea[name="content"]', {
+				resizeType : 1,
+				allowPreviewEmoticons : false,
+				allowImageUpload : false,
+				items : [
+					'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+					'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+					'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+			});
+		});
+	</script>   
+	<!-- 富文本编辑器 -->
+
+</head>
+<body>
+<include file="Publicmodel:head" />
+	<!-- 主内容去区-->
+	<div class="main clearfix">
+		<div class="setting wrap">
+			<div class="setting-title clearfix">
+			<h3>消息中心</h3>
+			</div>
+			<div class="setting-content clearfix">
+				<div class="setting-menu">
+					<ul class="clearfix">
+						<li class="select"><a class="icons msg ie6fixpic" href="{:U('/news','','')}">私信</a></li>
+						<li><a class="icons rec-com ie6fixpic" href="{:U('/system','','')}">系统消息</a></li>
+						<li><a class="icons rec-com ie6fixpic" href="{:U('/comment','','')}">评论</a></li>
+					</ul>
+				</div>
+				<div class="setting-detail">
+				<!--setting address static-->
+				<div class="setting-address">
+					<h3 class="green">私信管理</h3>
+					<p>可管理您收到的私信</p>
+					<!--address tab 地址管理列表 static-->
+					<div class="address-tab" id="addr_list" style="display: block; padding-top:50px;">
+<!-- 						<div class="btn-add">
+							<a class="btn-base btn-red-h30 common-sprite" onclick="add_addr()">
+								<span class="common-sprite">添加地址</span>
+							</a>
+						</div> -->
+						<!--分类框 已发送，已接受，未查看 -->
+						<div class="ads-list">
+													<table>
+								<colgroup>
+									<col width="90">
+									<col width="100">
+									<col width="250">
+									<col width="90">
+									<col width="145">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>发件人</th>
+										<td>发送时间</td>
+										<td>预览</td>
+										<td>状态</td>
+										<td>操作</td>
+									</tr>
+								</thead>
+								<tbody>
+								<volist name="data" id="vo">
+									<tr>
+										<td><a href="{:U('/person/'.$vo[sender_id])}">{$vo['niker']}</a></td>
+										<td>{$vo['time']}</td>
+										<td>{$vo['preview']}</td>
+										<eq name="vo['is_read']" value="0">
+											<td class="islook" style="color:red;">未阅读</td>
+										<else/>
+											<td class="islook" style="color:#000000;">已阅读</td>
+										</eq>
+										<td data-id="{$vo['id']}">
+											<a class="green jsdel" href="javascript:;" data-type="{$vo['type']}">删除</a>
+											<!-- <button class="" data-modal="modal-1">查看</button> -->
+											<a class="green jslook md-trigger " data-modal="{$vo['mid']}" data-type="{$vo['type']}" href="javascript:;">查看</a>
+
+											<a class="green jsreply" data-type="{$vo['type']}" href="javascript:;" value="回复">回复</a>
+										</td>
+									</tr>
+									<tr style="display:none;" id="{$vo[id]}">
+										<td colspan="5">
+			 								<form action="{:U('/replynews/'.$vo[sender_id])}" method="post">
+											<textarea name="content" style="margin-left:20px; width:500px;height:50px;visibility:hidden;"></textarea>
+						          		 	 <p class="quick_reply_box_tool_bar" style="text-align:right;margin-right:50px;">
+					                		<span class="btn btn_primary btn_input" style="margin-right:50px;">
+					                    	<input class="js_reply_OK" type="submit" value="回复" style="cursor:pointer;background-color:#fff;color: #4BA733;">
+					                		</span>
+					                		<a href="javascript:;" class="js_reply_pickup btn btn_default pickup" style="color: #4BA733;">收起</a>
+					            			</p>
+					        				</form>
+					        			</td>
+									</tr>
+										<!-- 模态框 -->									
+										<div class="md-modal md-effect-1" id="{$vo['mid']}">
+										<div class="md-content">
+										    <h3>查看私信</h3>
+										    <div>
+										        <p>{$vo['content']}</p>
+										        <button class="md-close">关闭</button>
+										    </div>
+										</div>
+								</volist>
+
+								</tbody>
+							</table>
+													</div>
+					</div>
+				<!--setting address end-->
+			</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- 尾部 -->
+<include file="Publicmodel:person_footer" />
+			<!-- 模态框 -->
+		<div class="md-overlay"></div><!-- the overlay element -->
+		<script src="__PUBLIC__/modal/js/classie.js"></script>
+		<script src="__PUBLIC__/modal/js/modalEffects.js"></script>
+		<script>
+			var polyfilter_scriptpath = '/js/';
+			var del_url="{:U('index/personalPage/delnews')}";
+			var look_url="{:U('index/personalPage/looknews')}";
+		</script>
+		<script src="__PUBLIC__/modal/js/cssParser.js"></script>
+		<script src="__PUBLIC__/modal/js/css-filters-polyfill.js"></script>
+
+		<!-- 查看,删除-->
+		<script type="text/javascript" src="__PUBLIC__/res/js/systemNews.js"></script>
+	
+</body>
+</html>

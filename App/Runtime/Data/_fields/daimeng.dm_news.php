@@ -1,0 +1,1 @@
+<?php	return array ( 0 => 'Id', 1 => 'sender_id', 2 => 'receiver_id', 3 => 'content', 4 => 'time', 5 => 'is_read', 6 => 'is_reply', '_autoinc' => true, '_pk' => 'Id', '_type' => array ( 'Id' => 'int(11)', 'sender_id' => 'int(11)', 'receiver_id' => 'int(11)', 'content' => 'text', 'time' => 'varchar(255)', 'is_read' => 'tinyint(3)', 'is_reply' => 'tinyint(4)', ), );?>

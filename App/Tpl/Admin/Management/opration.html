@@ -1,0 +1,101 @@
+<style type="text/css">
+body{
+	font-family: 'Microsoft Yahei';
+}
+td{
+		max-width:500px;
+		max-height: 100px;
+		padding: 5px 10px;
+		text-align: left;
+
+	}
+</style>
+<table border="1px" cellspacing="0px" style="margin:0px auto;">
+	<form action="{:U('admin/management/sav_change','','')}" method="post">
+	<tr>
+		<td>ID</td>
+		<td><input type="text" value="{$user.id}"maxlength="30" name="id" readonly /></td>
+		<td style="color:#ea544a">不可修改</td>
+	</tr>
+	<tr>
+		<td>账号</td>
+		<td><input type="text" value="{$user.username}"maxlength="126"  name="username" disabled /></td>
+		<td style="color:#ea544a">不可修改</td>
+
+	</tr>
+	<tr>
+		<td>密码</td>
+		<td><input type="text" value="{$user.password}"maxlength="30"  name="password"  /></td>
+		<td style="color:#a7ce37">可修改</td>
+
+	</tr>
+	<tr>
+		<td>状态</td>
+		<td>
+		<input type="radio" value="0"maxlength="30" name="lock_"   
+		<?php
+		if($user["lock_"]==0){
+			echo " checked";
+		}
+		?>
+		/>0
+		 <input type="radio" value="1"maxlength="30" name="lock_" 
+		 <?php
+		if($user["lock_"]==1){
+			echo " checked";
+		}
+		?> 
+		 />1
+		</td>
+		<td style="color:#a7ce37">0为活动账号,1表示冻结账号</td>
+	</tr>
+	<tr>
+		<td>昵称</td>
+		<td><input type="text" value="{$user.niker}"maxlength="30" name="niker"  /></td>
+		<td style="color:#a7ce37">可修改</td>
+
+	</tr>
+	<tr>
+		<td>最后一次登录时间</td>
+		<td><input type="text" value="<?php  echo date("Y-m-d H:i:s",$user["logintime"]) ?>"maxlength="30" name="logintime" disabled /></td>
+		<td style="color:#ea544a">不可修改</td>
+
+	</tr>
+	<tr>
+		<td>最后一次登录ip</td>
+		<td><input type="text" value="{$user.loginid}"maxlength="30" name="loginip" disabled /></td>
+		<td style="color:#ea544a">不可修改</td>
+	</tr>
+	<tr>
+		<td>是否开启公众平台</td>
+		<td>
+		<input type="radio" value="0"maxlength="30" name="public"  
+		 <?php
+		if($user["public"]==0){
+			echo " checked";
+		}
+		?> 
+		/>
+		<input type="radio" value="1" maxlength="30" name="public"  
+		 <?php
+		if($user["public"]==1){
+			echo " checked";
+		}
+		?> 
+		/>
+		</td>
+		<td style="color:#a7ce37">0不开启公众账号,1开启账号</td>
+
+	</tr>
+	<tr>
+		<td>邮箱</td>
+		<td><input type="text" value="{$user.email}"maxlength="30" name="email" disabled /></td>
+		<td style="color:#ea544a">不可修改</td>
+	</tr>
+	<tr>
+		<td colspan="3" style="text-align:center" >
+			<input type="submit" value="确认修改"  />
+		</td>
+	</tr>
+	</form> 
+</table>

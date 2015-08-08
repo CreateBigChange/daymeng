@@ -1,0 +1,24 @@
+$(document).ready(function(){
+	$(".del").click(function(){
+		alert("www");
+		$(this).parents("tr").hide();
+		id=$(this).prev().text();
+		alert(id);
+			$.ajax({
+			url:newsCenter_ajax,
+			datatype:"json",
+			type:"post",
+			data:{id:id},//ajax取得评论的范围
+			success:function(data)
+			{
+				//alert(data);
+				//window.location.replace(location.href);
+				//alert("success")
+			},
+			error:function()
+			{
+				alert("error!");
+			}
+			});
+	})
+})

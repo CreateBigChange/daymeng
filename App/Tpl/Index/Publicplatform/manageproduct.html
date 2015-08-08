@@ -1,0 +1,196 @@
+<HTML>
+<HEAD>
+	<META content="IE=11.0000" http-equiv="X-UA-Compatible">		 
+	<META charset="utf-8"> 
+   <link rel="Shortcut Icon" href="__PUBLIC__/res/images/sty.ico">
+	<META http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<TITLE>发货管理</TITLE>  
+	<LINK href="__PUBLIC__/res/css/layout.css" rel="stylesheet" type="text/css"> 
+	<LINK href="__PUBLIC__/res/css/base.css" rel="stylesheet" type="text/css"> 
+	<LINK href="__PUBLIC__/res/css/lib.css" rel="stylesheet" type="text/css">        
+	<LINK href="__PUBLIC__/res/css/page_index.css" rel="stylesheet">  
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/manageUser.css">  
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/res/css/platform.css">   
+	     
+</HEAD>     
+<BODY class="zh_CN">
+		<DIV class="head" id="header">
+				<DIV class="head_box">
+				<div class="bg-top">
+				 <!-- <img src="__PUBLIC__/res/images/login/bg-top.png">  -->
+			</div>
+						<DIV class="inner wrp">
+						<H1 class="logo"><A title="公众平台" href="{:U('/index')}"></A></H1>
+								<DIV class="account">
+										<DIV class="account_meta account_info">
+												<A class="nickname" href="{:U('/mp/set')}">{$nickname}</A> 
+												 <A href="{:U('/my')}">
+							                     <IMG 
+												class="avatar" src="__PUBLIC__/res/images/person_img/{$img}"></A>                            
+										 </DIV>
+
+									<DIV class="account_meta account_logout">
+										<A id="logout" href="{:U('index/Publicplatform/logOut')}">退出</A>
+									</DIV>
+								</DIV>
+						</DIV>
+				</DIV>
+		</DIV>
+<DIV class="body page_index" id="body">
+	<DIV class="container_box cell_layout side_l" id="js_container_box">
+			<DIV class="col_side">
+					<DIV class="menu_box" id="menuBar">
+							<DL class="menu no_extra">
+									  <DT class="menu_title">
+											功能 				
+										</DT>
+									  <DD class="menu_item ">
+											<A href="{:U('/mp/msg','','')}">群发功能</A>
+									  </DD>
+									  <DD class="menu_item "><A href="{:U('/mp/news','','')}">消息回复</A>
+									  </DD>
+							  </DL>
+							<DL class="menu ">
+									  <DT class="menu_title">管理 
+									</DT>
+
+										<DD class="menu_item "><A href="{:U('/mp/item','','')}">项目管理</A></DD>	
+									
+									  <DD class="menu_item "><A href="javascript:;">发货管理</A></DD>
+									  
+									  <DD class="menu_item "><A href="{:U('/mp/user','','')}">用户管理</A></DD>
+									  
+							  </DL>
+
+							  	<DL class="menu ">
+									  <DT class="menu_title">设置 
+									</DT>
+									
+									  <DD class="menu_item "><A href="{:U('/mp/set','','')}">公众号设置</A>
+									  </DD>
+									  
+							  </DL>
+				
+					  </DIV>
+			  </DIV>
+
+
+			  <div class="col_main">
+                    
+					<div class="main_hd">
+					    <h2 style="line-height: 30px;">发货管理</h2>
+					</div>
+					<div class="main_bd">
+
+					    <div class="mod_hd">
+					        <div class="mod_info">
+					       
+							<foreach name="title" item="vo"> 
+							<p style="margin-top:10px;">
+								{$vo['title']}
+							</p>
+							</foreach>
+							<select id="itemsp" name="object" style="margin-top:30px;margin-right:30px;">
+								<option>全部</option>
+		                		<foreach name='title' item="vo">
+		                		<option value="{$vo['id']}">{$vo['order']}</option>
+		                		</foreach>		               	
+		                	</select>
+							<select id="sendp" name="object" style="margin-top:30px;">
+								<option>全部</option>
+		                		<option>已发货</option>
+		                		<option>未发货</option>			               	
+		                	</select>
+		                	<span class="btn btn_input btn_primary" style="margin-left:50px;">
+								<button id="js_ok">确定</button></span>
+					        </div>
+					    </div>
+					    <div class="inner_container_box side_r cell_layout">
+					        <div class="inner_main">
+					            <div class="bd">
+					                
+											
+												<div class="ads-list">
+													<table>
+												<colgroup>
+													<col width="10%">
+													<col width="15%">
+													<col width="10%">
+													<col width="10%">
+													<col width="15%">
+													<col width="5%">
+													<col width="10%">
+													<col width="10%">
+													<col width="10%">
+													<col width="5%">
+												</colgroup>
+												<thead>
+													<tr>
+														<th>姓名</th>
+														<td>收货地址</td>
+														<td>电话</td>
+														<td>邮编</td>
+														<td>回报内容</td>
+														<td>限定名额</td>
+														<td>运费</td>
+														<td>回报时间</td>
+														<td>是否发货</td>
+														<td>操作</td>
+													</tr>
+												</thead>
+											
+												<tbody id="userinfo">
+												<foreach name="data" item="vo">
+													<tr>
+														<th>{$vo[name]}</th>
+														<td>{$vo[province]}&nbsp;{$vo[town]}&nbsp;{$vo[district]}&nbsp;{$vo[detail_address]}</td>
+														<td>{$vo[phone_number]}</td>
+														<td>{$vo[postcode]}</td>
+														<td>{$vo[content]}</td>
+														<td>{$vo[limits]}</td>
+														<td>{$vo[send_money]}</td>
+														<td>{$vo[time]}</td>
+														<td class="jsstatus">{$vo[send]}</td>
+														
+														<eq name="vo[send]" value="已发货">
+														
+														<td><a href="javascript:void(0);" data-id="{$vo[WIDout_trade_no]}" class="jsdetail">详情</a></td>
+
+														<else/>
+														
+														<td><a href="javascript:void(0);" class="jssend" data-id="{$vo[WIDout_trade_no]}">发货</a><td>
+
+														</eq>
+
+													</tr>
+												</foreach>
+												</tbody>
+						
+												</table>
+											</div>
+										
+					              </div>
+					        </div>
+					    </div>
+					</div>
+                </div>
+	 </DIV>
+	<DIV class="faq">
+		<UL class="links">
+		  <LI class="links_item no_extra"><A href="http://wpa.qq.com/msgrd?v=3&uin=3143239359&site=qq&menu=yes" 
+		  target="_blank">在线客服</A></LI>
+		  <LI class="links_item"><A href="http://wpa.qq.com/msgrd?v=3&uin=521187146&site=qq&menu=yes" 
+		  target="_blank">客服中心</A></LI></UL>
+	</DIV>
+</DIV>
+
+
+<include file="Publicmodel:person_footer" />  
+	<script type="text/javascript">
+	var getpro="{:U('index/Publicplatform/getpro')}";
+	var sendurl="{:U('index/Publicplatform/sendproduct')}"
+	</script>
+    <script type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/res/js/publicPlatform.js"></script>     
+
+             </BODY></HTML>

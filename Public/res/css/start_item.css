@@ -1,0 +1,55 @@
+.main{
+	background-color:#F3F3F3;
+	font-family: 'Microsoft Yahei', '\5FAE\8F6F\96C5\9ED1', Arial, 'Hiragino Sans GB', '\5B8B\4F53';
+}
+.title{
+	margin-top: 20px;
+	height: 60px;
+	border: thin solid;color:#DEDBDB;
+	background-color:#FAFAFA;
+}
+.title-content{
+	font-size: 22px;
+	font-family: 'microsoft yahei';
+	margin-top: 10px;
+	font-weight: normal;
+	color:#444;
+}
+.content1{
+	height: 480px;
+	background-color: #ffffff;
+	margin-top: 20px;
+}
+.content-img{
+	margin-top: 70px;
+	margin-left: 60px;
+	height: 300px;
+	width: 260px;
+}
+.img-right{
+	margin-left: 150px;
+	margin-top: 80px;
+}
+.img-right h4{
+	line-height: 28px;
+	font-size: 22px;
+	color: #A5CF39;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	font-family: "Microsoft Yahei";
+	font-weight: normal;
+}
+.img-right p{
+	line-height: 22px;
+	font-size: 12px;
+	color: #666;
+}
+.content-xy{
+	margin-top: 30px;
+	margin-bottom: 25px;
+}
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open>.dropdown-toggle.btn-danger {
+	color: #fff;
+	background-color: #FF6559;
+	border-color: #ff6559;
+}

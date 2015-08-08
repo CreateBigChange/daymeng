@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="expires" content="0">
+    <!-- 指定以最新的IE版本模式来显示网页 -->
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="呆萌网,呆萌社交,大学生社交,大学生众筹,呆萌众筹,众筹公益,呆萌基金,呆萌公益,大学生公益"/>
+    <meta name="Keywords" content="呆萌网,呆萌社交,大学生众筹,大学生社交,众筹网/">
+<link rel="stylesheet" href="__PUBLIC__/zc.css"/>
+<link rel="stylesheet" href="__PUBLIC__/res/bootstrap/css/bootstrap.css"/>
+<link rel="stylesheet" href="__PUBLIC__/res/css/community.css">
+<link rel="stylesheet" href="__PUBLIC__/res/css/jquery-sinaEmotion-2.1.0.min.css"/>
+<link rel="stylesheet" href="__PUBLIC__/res/css/hf.css"/>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/res/jquery/jquery-1.9.0.min.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/jquery-sinaEmotion-2.1.0.min.js"></script> 
+<script src="__PUBLIC__/res/bootstrap/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/res/js/community.js"></script>
+<script src="__PUBLIC__/res/js/uploadPreview.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/res/js/hf.js"></script>
+		
+</head>
+<script>
+community = '<?php	echo  U('community_ajax','','') ?>';//无限下滑的ajax
+second_ajax = '<?php	echo  U('second_ajax','','') ?>';//第二评论的ajax
+upload = '<?php	echo  U('upload','','') ?>';//评论图片的ajax					
+if('<?php echo $_SESSION["user_id"];?>')//判断是否登陆
+var login=1;
+else
+var login = 0;
+function getLocalTime(nS) {     
+return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');     
+}  //定义时间转化函数
+</script>
+<body class="all">
+<div class="head">
+<a href="{:U('index/index')}"><img  class="head_img" src="__PUBLIC__/res/images/small_pic/small_logo.png"/></a>
+</div>
+<div class="row">
+<div class="col-lg-1 "></div>
+<div class="col-lg-10 ">
+	<div class="row">
+		<div class="col-lg-9 main">
+			<div class="talk ">
+				<div class="talk_top">
+					<img class="talk_img" src="__PUBLIC__/res/images/small_pic/5.png"/>
+					<div class="talk_word">分享想法</div>
+				</div>
+				<div class="talk_top" data-toggle="modal" data-target="#myModal">
+					<img class="talk_img" src="__PUBLIC__/res/images/small_pic/7.png"/>
+					<div class="talk_word">发布照片</div>
+				</div>
+<!-- 模态框（Modal） -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+aria-labelledby="myModalLabel" aria-hidden="true">
+<form  method="post" action="<?php echo U('upload','','')?>"  enctype="multipart/form-data" >
+<div class="modal-dialog">
+<div class="modal-content">
+ <div class="modal-header">
+	<button type="button" class="close" 
+	   data-dismiss="modal" aria-hidden="true">
+		  &times;
+	</button>
+	<h4 class="modal-title" id="myModalLabel">
+	   
+	   
+	   
+<!--图片上传实时浏览的插件-->			   
+<script>
+$(function () {
+	$("#up").uploadPreview({ Img: "ImgPr", Width: 120, Height: 120 });
+});
+</script>
+	   
+<div id="main">
+	<div class="card" id="up_img">
+		<div class="summary">
+					<div style=" width:120px; height:120px;">
+						<img id="ImgPr" width="120" height="120" style="display: inherit;" /></div>
+					<input type="file" id="up"  name="photo1" />
+	</div>
+</div>
+ </h4>
+ </div>
+
+ <div class="modal-body">
+	<div style="display:none"><input  name="photo3" value="1"></div>
+	<textarea name="photo2"  class="content form-control" id="content" style="width:100%;height:100px;float:left;margin-top:5px" placeholder="分享你关于梦想的思考[呵呵]"></textarea>
+ </div>
+ <div class="modal-footer">
+	<button type="button" class="btn btn-default" 
+	   data-dismiss="modal">关闭
+	</button>
+	<button type="button" class="btn btn-primary" id="pic_load">
+	 提交
+	</button>
+ </div>
+</div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</form>				
+</div>								
+				<div class="main_form">
+				
+					<form class="publish form" style="float:left;width:90%;" >
+					<div id="result"></div>
+					 <div class="form-group">
+					<textarea class="content form-control" id="content" style="width:100%;height:100px;float:left;margin-top:5px" placeholder="分享你关于梦想的思考[呵呵]"></textarea><br />
+					</div>
+					<div class="bti">
+						<input class="face btn btn-default" type="button" value="表情" />
+						<input class="submit btn btn-default" type="button" value="提交" />
+					</div>
+
+					</form>
+				</div>
+					<script type="text/javascript">
+					$('body').delegate('.reply', {
+					click : function(event){
+					$(this).next('.comment_body').toggle();
+					event.preventDefault();
+					}
+					});
+					
+					
+					$('.submit').bind({
+					click : function(){
+					if($(this).parents('form').find('.content').val()=="")
+					{
+						alert("不能为空！");
+					}
+					else
+					{
+					if(login==1)//判断是否登陆
+					{
+					
+					
+					$.ajax({
+						url:'<?php	echo  U('main_ajax','','') ?>',
+						datatype:"json",
+						type:"post",
+						data:{id:<?php echo $_SESSION["user_id"]; ?>,content:$(this).parents('form').children(".form-group").find('.content').val()},//ajax取得评论的范围
+						success:function(data)
+						{
+							//alert(data);
+							window.location.replace(location.href);
+							//alert("success")
+						},
+						error:function()
+						{
+							alert("error!");
+						}
+						});
+					//$(".main_content").prepend("www");
+					//var content = $(this).parents('form').find('.content').val();
+					//$('#result').html(content).parseEmotion();
+					}
+					else
+					alert("请先登陆");
+					}
+					//发表主内容后会到数据库然后刷新页面
+
+					}
+					});
+					
+					
+					
+
+					</script>
+			</div>
+			<div class="main_nav"></div>
+			<div class="main_content">
+				<div class="word">友人动态</div>
+				<div class="nav"></div>
+				
+			<div class="first_title">
+				<ul class="nav nav-tabs ">
+				   <li class="active"><a href="#">全部</a></li>
+				   <li><a href="#">梦想</a></li>
+				   <li><a href="#">想法</a></li>
+				   <li><a href="#">照片</a></li>
+				   <li><a href="#">日志</a></li>
+				   <li><a href="#">计划</a></li>
+				</ul>
+			</div>
+				
+		<div class="all_content ">
+				<!--三重嵌套-->
+				<volist name="main_community" id="main" key="i">
+						<div class="commuty panel panel-default">
+								<div class="info">
+								<img src="__PUBLIC__/res/images/person_img/{$main.person_img}" class="commniuty_img img-circle"/>
+								<a href="javascript:void(0)"><div class="niker" title="{$main.niker}">{$main.niker}</div></a>
+								</div>
+								<div class="panel panel-default second_content">
+											<div class="community_id" style="display:none;">{$main.id}</div>
+															<empty name="main['img']">
+															<else />
+															<div ><img  style="margin-top:5px;" src="__PUBLIC__/res/images/community/{$main.img} " class="first_img "></div>
+															</empty>
+										<div class="title">&nbsp;&nbsp;&nbsp;&nbsp;{$main.content}</div>
+										
+										<div class="hid1">
+											<div class="main_time">{$main.time}</div>
+											<a href="javascript:void(0)"><img class="small_pic zan" id="zan" src="__PUBLIC__/res/images/small_pic/zan.png"/></a>
+											<a href="javascript:void(0)"><img class="small_pic pinglun" id="pinglun" src="__PUBLIC__/res/images/small_pic/pinglun.png"/></a>
+										</div>
+										<div class="second">
+										
+											<div class="change">
+												<form class="publish form" style="float:left;width:90%;" >
+												<div id="result"></div>
+												<textarea class="content form-control" id="content" style="width:100%;height:100px;float:left;margin-top:5px" placeholder="分享你关于梦想的思考[呵呵]"></textarea><br />
+												<input class="face" type="button" value="表情" />
+												<input class="second_submit" type="button" value="提交" />
+												</form>
+											</div>
+					<volist name="second_community[$i-1]" id="second" key="k">				
+											<div class="person_community" style="margin-top:50px;">
+												<img src="__PUBLIC__/res/images/person_img/1.jpg" class="person_community_pic img-circle"/>
+												<div class="other_content">
+													<div class="name">{$second.niker} 公开评论:</div>
+													<div class="community_id">{$second.id}</div>
+													<div class="content_1 "> {$second.content}</div>
+													<div class="botton">
+														<div class="time">{$second.time }</div>
+														<a href="javascript:void(0)"><div class="second_repay_content">回复</div></a>
+													</div>
+												</div>
+											</div>
+					</volist>
+									
+											<div class="hiden"></div>
+
+										</div>
+								</div>
+						<div class="nav"></div>
+					</div>
+				</volist>
+		</div>
+		</div>
+		</div>
+		<div class="col-lg-3">
+			<div class="person">
+			<empty name='person_info[0]["person_info_img"]'>
+			<img src="__PUBLIC__/res/images/personalPage/person_img.png" class="person_img"/>
+			<else /> 
+			<img src="__PUBLIC__/res/images/personalPage/{$person_info[0]['person_info_img']}" class="person_img"/>
+			</empty>
+				
+				<div class="person_name">
+			<empty name='person_info[0]["niker"]'>请先登陆<else /> {$person_info[0]["niker"]}</empty>
+
+					
+				</div>
+				<div class="person_info">
+
+				</div>
+			</div>
+			<div class="well pangbian">
+				<div id="myCarousel" class="carousel slide">
+			   <!-- 轮播（Carousel）指标 -->
+			   
+			   <!-- 轮播（Carousel）项目 -->
+			   <div class="carousel-inner">
+				  <div class="item active">
+					 社交网络不是让人与人的距离越来越远，而是消耗人花在自我事务上的时间，更加关注他人，只是肤浅的碎片化的关注。你和朋友聊天时也看手机，上班时也上网，你不是和网友聊天，那种所谓网络时代让人与人之间距离更远的老套说法早就他妈的该过时了。现在没有傻子在网上交友。这个时代的网络只是让人与人的距离更近，你想了解谁的生活都可以，但只是皮肤一下两厘米的深度。
+				  </div>
+				  <div class="item">
+					在耶鲁大二期间，Ben Silberman萌生了从商的想法，但又不知从何做起，于是他成为了 DC 公司执行委员会的咨询顾问。一次偶然的机会，他接触到了著名科技博客 Techcrunch，并发现自己开始慢慢沉迷其中，于是他渐渐意识到他现在的生活并不是他想要的生活，而《硅谷海盗》这部电影使他萌生了去西部的想法，电影中的一句台词对他触动很大：现在加州也许正在经历一场变革。经再三考虑，他从 DC 辞职去了加州。
+				  </div>
+				  <div class="item">
+					 大多数人的都不愿意承认的残酷现实是，看着现在的自己，你基本上就知道10年后你会成为怎样的人，是不是会成功，会不会改变世界。不愿意承认的原因是，我们还愿意相信“人生是不可控制的”，“永远不知道下一个是什么，生活才会更有趣么”“要等待机会到来”这样的鬼话。
+				  </div>
+			   </div>
+			   <!-- 轮播（Carousel）导航 -->
+			   <a class="carousel-control left" href="#myCarousel" 
+				  data-slide="prev">&lsaquo;</a>
+			   <a class="carousel-control right" href="#myCarousel" 
+				  data-slide="next">&rsaquo;</a>
+				</div> 
+			</div>
+		
+		</div>
+	</div>
+		
+</div>
+<div class="col-lg-1"></div>
+</div>
+<!--包含底部文件的渲染-->
+<include file="Publicmodel:footer" />	
+</body>
+</html>
